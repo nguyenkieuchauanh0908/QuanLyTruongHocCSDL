@@ -1,4 +1,5 @@
 ﻿using QuanLyTruongHoc.Forms;
+using QuanLyTruongHoc.Forms.FormLopHoc;
 using QuanLyTruongHoc.Forms.FormSinhVien;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace QuanLyTruongHoc
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ViewSinhVienForm());
+            Application.Run(new MainForm());
         }
     }
 }

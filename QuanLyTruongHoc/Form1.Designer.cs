@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             this.sign_in_role = new System.Windows.Forms.GroupBox();
-            this.sign_in_teacher = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.sign_in_student = new System.Windows.Forms.RadioButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.sign_in_teacher = new System.Windows.Forms.RadioButton();
+            this.sign_in_student = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.input_username = new System.Windows.Forms.TextBox();
             this.input_password = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.sign_in_role.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -56,42 +57,6 @@
             this.sign_in_role.TabStop = false;
             this.sign_in_role.Text = "Bạn là";
             // 
-            // sign_in_teacher
-            // 
-            this.sign_in_teacher.AutoSize = true;
-            this.sign_in_teacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sign_in_teacher.Location = new System.Drawing.Point(3, 39);
-            this.sign_in_teacher.Name = "sign_in_teacher";
-            this.sign_in_teacher.Size = new System.Drawing.Size(125, 30);
-            this.sign_in_teacher.TabIndex = 0;
-            this.sign_in_teacher.TabStop = true;
-            this.sign_in_teacher.Text = "Giáo viên";
-            this.sign_in_teacher.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(3, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(156, 30);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Quản trị viên";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // sign_in_student
-            // 
-            this.sign_in_student.AutoSize = true;
-            this.sign_in_student.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sign_in_student.Location = new System.Drawing.Point(3, 75);
-            this.sign_in_student.Name = "sign_in_student";
-            this.sign_in_student.Size = new System.Drawing.Size(123, 30);
-            this.sign_in_student.TabIndex = 2;
-            this.sign_in_student.TabStop = true;
-            this.sign_in_student.Text = "Sinh viên";
-            this.sign_in_student.UseVisualStyleBackColor = true;
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoSize = true;
@@ -106,6 +71,42 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(229, 128);
             this.flowLayoutPanel1.TabIndex = 3;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(3, 3);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(156, 30);
+            this.radioButton1.TabIndex = 1;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Quản trị viên";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // sign_in_teacher
+            // 
+            this.sign_in_teacher.AutoSize = true;
+            this.sign_in_teacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sign_in_teacher.Location = new System.Drawing.Point(3, 39);
+            this.sign_in_teacher.Name = "sign_in_teacher";
+            this.sign_in_teacher.Size = new System.Drawing.Size(125, 30);
+            this.sign_in_teacher.TabIndex = 0;
+            this.sign_in_teacher.TabStop = true;
+            this.sign_in_teacher.Text = "Giáo viên";
+            this.sign_in_teacher.UseVisualStyleBackColor = true;
+            // 
+            // sign_in_student
+            // 
+            this.sign_in_student.AutoSize = true;
+            this.sign_in_student.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sign_in_student.Location = new System.Drawing.Point(3, 75);
+            this.sign_in_student.Name = "sign_in_student";
+            this.sign_in_student.Size = new System.Drawing.Size(123, 30);
+            this.sign_in_student.TabIndex = 2;
+            this.sign_in_student.TabStop = true;
+            this.sign_in_student.Text = "Sinh viên";
+            this.sign_in_student.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -170,11 +171,22 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "PHẦN MỀM QUẢN LÝ TRƯỜNG HỌC";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(142, 527);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1046, 595);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Name = "MainForm";
@@ -204,6 +216,7 @@
         private System.Windows.Forms.TextBox input_password;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
     }
 }
 
