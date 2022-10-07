@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuanLyTruongHoc.DataObjects
+namespace QuanLyTruongHoc.Models.DatabaseModel
 {
-    public class Enumeration
+    internal class ADOKyHoc
     {
-        
-
     }
 }

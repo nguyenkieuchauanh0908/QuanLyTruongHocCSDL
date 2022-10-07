@@ -48,8 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataObjects\Enumeration.cs" />
+    <Compile Include="DataObjects\Diem.cs" />
+    <Compile Include="DataObjects\GiangVien.cs" />
     <Compile Include="DataObjects\IObject.cs" />
+    <Compile Include="DataObjects\Khoa.cs" />
+    <Compile Include="DataObjects\KyHoc.cs" />
+    <Compile Include="DataObjects\LopHoc.cs" />
+    <Compile Include="DataObjects\MonHoc.cs" />
+    <Compile Include="DataObjects\QuanTriVien.cs" />
     <Compile Include="DataObjects\SinhVien.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -69,19 +75,37 @@
     <Compile Include="Forms\DetailInfoForm.Designer.cs">
       <DependentUpon>DetailInfoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormLopHoc\AddLopHocForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLopHoc\ListLopHocForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FormSinhVien\AddSinhVienForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormSinhVien\ListSinhVienForm.cs">
+    <Compile Include="Forms\FormSinhVien\UpdateSinhVienForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormSinhVien\ViewSinhVienForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\FormSinhVien\ListSinhVienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Helpers\Attributes\DataNameAttribute.cs" />
     <Compile Include="Helpers\Convert\ConverterHelper.cs" />
     <Compile Include="Helpers\Convert\ConvertToObject.cs" />
+    <Compile Include="Models\Authentication\LoginSession.cs" />
+    <Compile Include="Models\DatabaseModel\ADODangNhap.cs" />
+    <Compile Include="Models\DatabaseModel\ADODiem.cs" />
+    <Compile Include="Models\DatabaseModel\ADOGiangVien.cs" />
+    <Compile Include="Models\DatabaseModel\ADOKhoa.cs" />
+    <Compile Include="Models\DatabaseModel\ADOKyHoc.cs" />
+    <Compile Include="Models\DatabaseModel\ADOLopHoc.cs" />
     <Compile Include="Models\DatabaseModel\ADOManager.cs" />
+    <Compile Include="Models\DatabaseModel\ADOMonHoc.cs" />
+    <Compile Include="Models\DatabaseModel\ADOOperator.cs" />
     <Compile Include="Models\DatabaseModel\ADOSinhVien.cs" />
     <Compile Include="Models\DatabaseModel\IADOObject.cs" />
     <Compile Include="Program.cs" />
@@ -95,8 +119,17 @@
     <EmbeddedResource Include="Forms\DetailInfoForm.resx">
       <DependentUpon>DetailInfoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLopHoc\AddLopHocForm.resx">
+      <DependentUpon>AddLopHocForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSinhVien\AddSinhVienForm.resx">
       <DependentUpon>AddSinhVienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSinhVien\ListSinhVienForm.resx">
+      <DependentUpon>ListSinhVienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSinhVien\UpdateSinhVienForm.resx">
+      <DependentUpon>UpdateSinhVienForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSinhVien\ViewSinhVienForm.resx">
       <DependentUpon>ViewSinhVienForm.cs</DependentUpon>
@@ -111,6 +144,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.LopHoc.datasource" />
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.SinhVien.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -125,6 +159,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Forms\FormDiem\" />
+    <Folder Include="Forms\FormGiangVien\" />
+    <Folder Include="Forms\FormKhoa\" />
+    <Folder Include="Forms\FormKyHoc\" />
+    <Folder Include="Forms\FormMonHoc\" />
+    <Folder Include="Forms\FormTrangChu\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

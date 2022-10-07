@@ -1,28 +1,35 @@
 ﻿using QuanLyTruongHoc.DataObjects;
+using QuanLyTruongHoc.Helpers.Convert;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Runtime.Remoting;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyTruongHoc.Forms.FormSinhVien
 {
-    internal class AddSinhVienForm : ViewSinhVienForm
+    internal class UpdateSinhVienForm : ViewSinhVienForm
     {
-        protected System.Windows.Forms.Button add_button;
-        
-        public AddSinhVienForm(SinhVien sv) : base(sv)
+        private System.Windows.Forms.Button update_button;
+
+        public UpdateSinhVienForm(SinhVien sv) : base(sv)
         {
+
+            SinhVien newSv = ConverterHelper.ConvertDataRow<SinhVien>(MainForm.Manager.SinhVien.Get(sv).Rows[0]);
             InitializeComponent();
-            bindingSource.DataSource = new SinhVien();
+            this.LoadDataFromObject(newSv);
+        }
+
+        protected override void Init()
+        {
+            this.maSVTextBox.Enabled = false;
         }
 
         private void InitializeComponent()
         {
-            this.add_button = new System.Windows.Forms.Button();
+            this.update_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -39,24 +46,24 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.add_button);
-            this.panel2.Controls.SetChildIndex(this.add_button, 0);
+            this.panel2.Controls.Add(this.update_button);
+            this.panel2.Controls.SetChildIndex(this.update_button, 0);
             // 
-            // add_button
+            // update_button
             // 
-            this.add_button.Location = new System.Drawing.Point(233, 16);
-            this.add_button.Name = "add_button";
-            this.add_button.Size = new System.Drawing.Size(75, 23);
-            this.add_button.TabIndex = 2;
-            this.add_button.Text = "Thêm";
-            this.add_button.UseVisualStyleBackColor = true;
-            this.add_button.Click += new System.EventHandler(this.add_button_Click);
+            this.update_button.Location = new System.Drawing.Point(223, 16);
+            this.update_button.Name = "update_button";
+            this.update_button.Size = new System.Drawing.Size(75, 23);
+            this.update_button.TabIndex = 2;
+            this.update_button.Text = "Cập nhật";
+            this.update_button.UseVisualStyleBackColor = true;
+            this.update_button.Click += new System.EventHandler(this.update_button_Click);
             // 
-            // AddSinhVienForm
+            // UpdateSinhVienForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.ClientSize = new System.Drawing.Size(498, 688);
-            this.Name = "AddSinhVienForm";
+            this.Name = "UpdateSinhVienForm";
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -65,10 +72,11 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
 
         }
 
-        private void add_button_Click(object sender, EventArgs e)
+        private void update_button_Click(object sender, EventArgs e)
         {
             SinhVien sv = bindingSource.Current as SinhVien;
             if (sv == null) return;
+            
             ValidationContext context = new ValidationContext(sv, null, null);
             IList<ValidationResult> validationResults = new List<ValidationResult>();
 
@@ -81,17 +89,15 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
                 }
             }
 
-            if (MainForm.Manager.SinhVien.Add(sv))
+            if (MainForm.Manager.SinhVien.Update(sv))
             {
-                MessageBox.Show("Thêm thành công");
+                MessageBox.Show("Cập nhật thành công");
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Thêm thất bại");
+                MessageBox.Show("Cập nhật thất bại");
             }
-        
-            
         }
     }
 }

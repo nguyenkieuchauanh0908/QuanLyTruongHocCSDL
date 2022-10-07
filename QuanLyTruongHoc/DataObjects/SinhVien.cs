@@ -1,14 +1,7 @@
-﻿using QuanLyTruongHoc.Helpers;
-using QuanLyTruongHoc.Helpers.Attributes;
-using QuanLyTruongHoc.Helpers.Convert;
+﻿using QuanLyTruongHoc.Helpers.Attributes;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QuanLyTruongHoc.DataObjects
 {
@@ -18,7 +11,7 @@ namespace QuanLyTruongHoc.DataObjects
         [DisplayName("Mã sinh viên")]
         [Required]
         public int MaSV { get; set; }
-        
+
         [DataName("ten")]
         [DisplayName("Tên")]
         [Required]
@@ -60,23 +53,6 @@ namespace QuanLyTruongHoc.DataObjects
         [Required]
         [DisplayName("Mã khoa")]
         public int MaKhoa { get; set; }
-
-        public SinhVien()
-        {
-
-        }
-        public SinhVien(int maSV, string ten, string ho, string email, string gioiTinh, string diaChi, DateTime ngaySinh, string tinhTrang, int maKhoa)
-        {
-            MaSV = maSV;
-            Ten = ten;
-            Ho = ho;
-            Email = email;
-            GioiTinh = gioiTinh;
-            DiaChi = diaChi;
-            NgaySinh = ngaySinh;
-            TinhTrang = tinhTrang;
-            MaKhoa = maKhoa;
-        }
 
         public override string ToString()
         {
