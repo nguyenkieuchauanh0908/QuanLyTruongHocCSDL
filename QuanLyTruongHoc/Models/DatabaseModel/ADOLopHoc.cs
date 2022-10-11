@@ -37,6 +37,11 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
             return adoOperator.ExecuteQuery(query);
         }
 
+        public DataTable Search<T>(T obj) where T : IObject
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Update<T>(T obj) where T : IObject
         {
             throw new NotImplementedException();

@@ -30,6 +30,11 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
             throw new NotImplementedException();
         }
 
+        public DataTable Search<T>(T obj) where T : IObject
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Update<T>(T obj) where T : IObject
         {
             throw new NotImplementedException();
