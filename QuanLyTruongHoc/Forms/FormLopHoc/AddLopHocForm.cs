@@ -23,7 +23,7 @@ namespace QuanLyTruongHoc.Forms.FormLopHoc
 
         protected override void Init()
         {
-            this.Text = "Thêm lớp học";
+            this.Text = "Thêm Chau Em";
         }
 
         private void InitializeComponent()
