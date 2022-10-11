@@ -27,6 +27,11 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             Init();
         }
 
+        public ViewSinhVienForm() : base()
+        {
+            InitializeComponent();
+        }
+
         protected override void Init()
         {
             this.maSVTextBox.Enabled = false;

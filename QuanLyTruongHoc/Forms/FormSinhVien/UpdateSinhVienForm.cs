@@ -22,6 +22,11 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             this.LoadDataFromObject(newSv);
         }
 
+        public UpdateSinhVienForm() : base()
+        {
+                InitializeComponent();
+        }
+
         protected override void Init()
         {
             this.maSVTextBox.Enabled = false;
@@ -34,6 +39,10 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Size = new System.Drawing.Size(611, 637);
             this.panel1.Controls.SetChildIndex(this.tinhTrangComboBox, 0);
             this.panel1.Controls.SetChildIndex(this.tenTextBox, 0);
             this.panel1.Controls.SetChildIndex(this.ngaySinhDateTimePicker, 0);
@@ -47,6 +56,7 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             // panel2
             // 
             this.panel2.Controls.Add(this.update_button);
+            this.panel2.Size = new System.Drawing.Size(611, 51);
             this.panel2.Controls.SetChildIndex(this.update_button, 0);
             // 
             // update_button
@@ -62,7 +72,7 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             // UpdateSinhVienForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.ClientSize = new System.Drawing.Size(498, 688);
+            this.ClientSize = new System.Drawing.Size(611, 688);
             this.Name = "UpdateSinhVienForm";
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
             this.panel1.ResumeLayout(false);

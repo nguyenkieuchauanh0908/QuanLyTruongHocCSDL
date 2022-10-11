@@ -71,5 +71,10 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
             parameters[0] = new SqlParameter("@maSV", (obj as SinhVien).MaSV);
             return adoOperator.ExecuteNonQuery(query, parameters);
         }
+
+        public DataTable Search<T>(T obj) where T : IObject
+        {
+            throw new NotImplementedException();
+        }
     }
 }
