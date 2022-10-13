@@ -17,7 +17,6 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
         public ADOGiangVien GiangVien { get => giangVien; }
         public ADOLopHoc LopHoc { get => lopHoc; }
         
-
         public ADOManager(string connectionString)
         {
             adoOperator = new ADOOperator(connectionString);
