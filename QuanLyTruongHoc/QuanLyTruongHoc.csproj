@@ -107,6 +107,7 @@
     <Compile Include="Models\DatabaseModel\ADOMonHoc.cs" />
     <Compile Include="Models\DatabaseModel\ADOOperator.cs" />
     <Compile Include="Models\DatabaseModel\ADOSinhVien.cs" />
+    <Compile Include="Models\DatabaseModel\CustomParameter.cs" />
     <Compile Include="Models\DatabaseModel\IADOObject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
