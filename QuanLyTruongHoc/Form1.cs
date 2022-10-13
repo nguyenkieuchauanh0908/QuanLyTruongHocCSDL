@@ -17,9 +17,11 @@ namespace QuanLyTruongHoc
     internal partial class MainForm : Form
     {
         private static ADOManager adoManager;
-        public static ADOManager Manager { get => adoManager;} //property, readonly
-                                                                // Anonymouse method
+
+        public static ADOManager Manager { get => adoManager;} 
+        
         string connectionString = @"Data Source=DESKTOP-7IT3958;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True";
+
         public MainForm()
         {
             InitializeComponent();

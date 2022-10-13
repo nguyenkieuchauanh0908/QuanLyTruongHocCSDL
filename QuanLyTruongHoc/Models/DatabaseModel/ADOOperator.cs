@@ -12,6 +12,12 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
     internal class ADOOperator
     {
         private SqlConnection connection;
+        private SqlConnection conn;
+        private DataTable dt;
+        private SqlCommand cmd;
+        private string sql;
+
+
         public ADOOperator(string connectionString)
         {
             this.connection = new SqlConnection(connectionString);
@@ -104,6 +110,7 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
             return null;
         }
 
+
         public bool ExecuteProcedure(string procedureName, SqlParameter[] sqlParameters = null)
         {
             try
@@ -131,7 +138,6 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
                 CloseConnection();
             }
         }
-
-     
     }
 }
+
