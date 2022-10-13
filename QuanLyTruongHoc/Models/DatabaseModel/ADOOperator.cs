@@ -103,5 +103,35 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
             }
             return null;
         }
+
+        public bool ExecuteProcedure(string procedureName, SqlParameter[] sqlParameters = null)
+        {
+            try
+            {
+                if (OpenConnection())
+                {
+                    SqlCommand command = new SqlCommand(procedureName, connection);
+                    command.CommandType = CommandType.StoredProcedure;
+                    if (sqlParameters != null)
+                    {
+                        command.Parameters.AddRange(sqlParameters);
+                    }
+                    return true;
+                }
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ExecuteProcedure Error ! " + ex.Message, "Information");
+                return false;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
+     
     }
 }
