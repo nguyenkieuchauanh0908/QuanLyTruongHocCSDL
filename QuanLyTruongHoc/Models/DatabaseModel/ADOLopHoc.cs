@@ -19,6 +19,7 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
         public bool Add<T>(T obj) where T : IObject
         {
             throw new NotImplementedException();
+            
         }
 
         public bool Delete<T>(T obj) where T : IObject

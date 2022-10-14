@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>QuanLyTruongHoc</RootNamespace>
     <AssemblyName>QuanLyTruongHoc</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -75,6 +75,9 @@
     <Compile Include="Forms\DetailInfoForm.Designer.cs">
       <DependentUpon>DetailInfoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormGiangVien\ListGiangVienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FormLopHoc\AddLopHocForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +110,7 @@
     <Compile Include="Models\DatabaseModel\ADOMonHoc.cs" />
     <Compile Include="Models\DatabaseModel\ADOOperator.cs" />
     <Compile Include="Models\DatabaseModel\ADOSinhVien.cs" />
+    <Compile Include="Models\DatabaseModel\CustomParameter.cs" />
     <Compile Include="Models\DatabaseModel\IADOObject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -161,7 +165,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\FormDiem\" />
-    <Folder Include="Forms\FormGiangVien\" />
     <Folder Include="Forms\FormKhoa\" />
     <Folder Include="Forms\FormKyHoc\" />
     <Folder Include="Forms\FormMonHoc\" />

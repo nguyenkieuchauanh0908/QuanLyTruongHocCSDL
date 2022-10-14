@@ -21,13 +21,13 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
 
         public DataTable Load()
         {
-            string query = "select * from SinhVien";
+            string query = "select * from dbo.GetAllSinhVien()";
             return adoOperator.ExecuteQuery(query);
         }
 
         public DataTable Get<T>(T obj) where T : IObject
         {
-            string query = "SELECT * FROM SinhVien WHERE id = @maSV";
+            string query = "select * from dbo.GetSinhVien(@maSV)";
             SqlParameter[] parameters = new SqlParameter[1];
             parameters[0] = new SqlParameter("@maSV", (obj as SinhVien).MaSV);
             return adoOperator.ExecuteQuery(query, parameters);
@@ -35,7 +35,7 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
 
         public bool Add<T>(T obj) where T : IObject
         {
-            string query = "INSERT INTO SinhVien VALUES(@ten, @ho, @email, @gioiTinh, @diaChi, @ngaySinh, @tinhTrang, @maKhoa)";
+            string query = "dbo.InsertSinhVien";
             SqlParameter[] parameters = new SqlParameter[8];
             parameters[0] = new SqlParameter("@ten", (obj as SinhVien).Ten);
             parameters[1] = new SqlParameter("@ho", (obj as SinhVien).Ho);
@@ -50,7 +50,7 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
 
         public bool Update<T>(T obj) where T : IObject
         {
-            string query = "UPDATE SinhVien SET ten = @ten, ho = @ho, email = @email, gioi_tinh = @gioiTinh, dia_chi = @diaChi, ngay_sinh = @ngaySinh, tinh_trang = @tinhTrang, ma_khoa = @maKhoa WHERE id = @maSV";
+            string query = "dbo.UpdateSinhVien";
             SqlParameter[] parameters = new SqlParameter[9];
             parameters[0] = new SqlParameter("@ten", (obj as SinhVien).Ten);
             parameters[1] = new SqlParameter("@ho", (obj as SinhVien).Ho);
@@ -61,15 +61,15 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
             parameters[6] = new SqlParameter("@tinhTrang", (obj as SinhVien).TinhTrang);
             parameters[7] = new SqlParameter("@maKhoa", (obj as SinhVien).MaKhoa);
             parameters[8] = new SqlParameter("@maSV", (obj as SinhVien).MaSV);
-            return adoOperator.ExecuteNonQuery(query, parameters);
+            return adoOperator.ExecuteProcedure(query, parameters);
         }
 
         public bool Delete<T>(T obj) where T : IObject
         {
-            string query = "DELETE FROM SinhVien WHERE id = @maSV";
+            string query = "dbo.DeleteSinhVien";
             SqlParameter[] parameters = new SqlParameter[1];
             parameters[0] = new SqlParameter("@maSV", (obj as SinhVien).MaSV);
-            return adoOperator.ExecuteNonQuery(query, parameters);
+            return adoOperator.ExecuteProcedure(query, parameters);
         }
 
         public DataTable Search<T>(T obj) where T : IObject
