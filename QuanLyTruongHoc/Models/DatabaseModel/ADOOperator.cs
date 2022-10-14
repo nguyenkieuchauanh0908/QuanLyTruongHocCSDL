@@ -132,6 +132,32 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
             }
         }
 
-     
+        public object ExecuteScalar(string sql, SqlParameter[] sqlParameters = null)
+        {
+            try
+            {
+                if (OpenConnection())
+                {
+                    SqlCommand command = new SqlCommand(sql, connection);
+                    if (sqlParameters != null)
+                    {
+                        command.Parameters.AddRange(sqlParameters);
+                    }
+                    return command.ExecuteScalar();
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ExecuteScalar Error ! " + ex.Message, "Information");
+                return null;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
+
     }
 }
