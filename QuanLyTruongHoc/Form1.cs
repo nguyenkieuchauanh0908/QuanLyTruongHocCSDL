@@ -36,7 +36,7 @@ namespace QuanLyTruongHoc
             ListSinhVienForm listSinhVienForm = new ListSinhVienForm();
             ListGiangVienForm listGiangVienForm = new ListGiangVienForm();
             ListDiemForm listDiemForm = new ListDiemForm();
-            listGiangVienForm.Show();
+            listDiemForm.Show();
         }
     }
 }
