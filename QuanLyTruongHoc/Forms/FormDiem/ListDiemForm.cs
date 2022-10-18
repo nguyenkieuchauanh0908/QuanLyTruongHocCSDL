@@ -9,56 +9,61 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyTruongHoc.Forms.FormGiangVien
+namespace QuanLyTruongHoc.Forms.FormDiem
 {
-    internal class ListGiangVienForm : BaseListForm
+    internal class ListDiemForm : BaseListForm
     {
-        private System.Windows.Forms.BindingSource giangVienBindingSource;
+        private System.Windows.Forms.BindingSource diemBindingSource;
+        private BindingSource diemBindingSource1;
         private Button add_btn;
         private System.ComponentModel.IContainer components;
-        public ListGiangVienForm()
+        public ListDiemForm()
         {
             InitializeComponent();
-            dataGridView.DataSource = MainForm.Manager.GiangVien.Load();
+            dataGridView.DataSource = MainForm.Manager.Diem.Load();
         }
 
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.giangVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.diemBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.add_btn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.giangVienBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diemBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.add_btn);
-            this.panel1.Size = new System.Drawing.Size(828, 238);
+            this.panel1.Size = new System.Drawing.Size(800, 32);
             this.panel1.Controls.SetChildIndex(this.search_btn, 0);
             this.panel1.Controls.SetChildIndex(this.add_btn, 0);
             // 
-            // giangVienBindingSource
+            // search_btn
             // 
-            this.giangVienBindingSource.DataSource = typeof(QuanLyTruongHoc.DataObjects.GiangVien);
+            this.search_btn.Location = new System.Drawing.Point(616, 69);
+            // 
+            // diemBindingSource1
+            // 
+            this.diemBindingSource1.DataSource = typeof(QuanLyTruongHoc.DataObjects.Diem);
             // 
             // add_btn
             // 
-            this.add_btn.Location = new System.Drawing.Point(583, 178);
+            this.add_btn.Location = new System.Drawing.Point(207, -10);
             this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(75, 23);
+            this.add_btn.Size = new System.Drawing.Size(113, 42);
             this.add_btn.TabIndex = 1;
             this.add_btn.Text = "Thêm";
             this.add_btn.UseVisualStyleBackColor = true;
             this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
-            // ListGiangVienForm
+            // ListDiemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.ClientSize = new System.Drawing.Size(828, 450);
-            this.Name = "ListGiangVienForm";
+            this.ClientSize = new System.Drawing.Size(800, 694);
+            this.Name = "ListDiemForm";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.giangVienBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diemBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -69,10 +74,10 @@ namespace QuanLyTruongHoc.Forms.FormGiangVien
             DataRow row = ((DataRowView)dataGridView.SelectedRows[0].DataBoundItem).Row;
             if (row != null)
             {
-                
-                GiangVien gv = Helpers.Convert.ConverterHelper.ConvertDataRow<GiangVien>(row);
-                ViewGiangVienForm viewGiangVienForm = new ViewGiangVienForm (gv);
-                viewGiangVienForm.Show();
+                Diem diem = ConverterHelper.ConvertDataRow<Diem>(row);
+                ViewDiemForm updateDiemForm = new ViewDiemForm(diem);
+                updateDiemForm.Show();
+
             }
             else
             {
@@ -85,9 +90,9 @@ namespace QuanLyTruongHoc.Forms.FormGiangVien
             DataRow row = ((DataRowView)dataGridView.SelectedRows[0].DataBoundItem).Row;
             if (row != null)
             {
-                GiangVien gv = ConverterHelper.ConvertDataRow<GiangVien>(row);
-                UpdateGiangVienForm updateGiangVienForm = new UpdateGiangVienForm(gv);
-                updateGiangVienForm.Show();
+                Diem diem = ConverterHelper.ConvertDataRow<Diem>(row);
+                ViewDiemForm updateDiemForm = new ViewDiemForm(diem);
+                updateDiemForm.Show();
 
             }
             else
@@ -101,32 +106,32 @@ namespace QuanLyTruongHoc.Forms.FormGiangVien
             DataRow row = ((DataRowView)dataGridView.SelectedRows[0].DataBoundItem).Row;
             if (row != null)
             {
-                GiangVien gv = Helpers.Convert.ConverterHelper.ConvertDataRow<GiangVien>(row);
-                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa giang vien này không?", "Xóa giang vien", MessageBoxButtons.YesNo);
+                Diem diem = Helpers.Convert.ConverterHelper.ConvertDataRow<Diem>(row);
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Xóa", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    ADOGiangVien giangVien = MainForm.Manager.GiangVien;
-                    if (giangVien.Delete(gv))
+                    ADODiem Diem = MainForm.Manager.Diem;
+                    if (Diem.Delete(diem))
                     {
-                        MessageBox.Show("Xóa giảng viên thành công");
-                        dataGridView.DataSource = giangVien.Load();
+                        MessageBox.Show("Xóa thành công");
+                        dataGridView.DataSource = Diem.Load();
                     }
                     else
                     {
-                        MessageBox.Show("Xóa giảng viên thất bại");
+                        MessageBox.Show("Xóa thất bại");
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Không có giảng viên nào được chọn");
+                MessageBox.Show("Không có điểm nào được chọn");
             }
         }
 
-        private void add_btn_Click(object sender, EventArgs e)
+        protected void add_btn_Click(object sender, EventArgs e)
         {
-            AddGiangVienForm addGiangVienForm = new AddGiangVienForm();
-            addGiangVienForm.Show();
+            AddDiemForm addDiemForm = new AddDiemForm();
+            addDiemForm.Show();
         }
     }
 }

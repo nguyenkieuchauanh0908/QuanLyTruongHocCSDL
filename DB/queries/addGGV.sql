@@ -1,5 +1,4 @@
-create proc AddSV 
-@id int,
+create proc AddGV 
 @ten nvarchar(50),
 @ho nvarchar (50),
 @email nvarchar(50),
