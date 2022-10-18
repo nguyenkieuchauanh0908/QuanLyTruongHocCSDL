@@ -139,12 +139,6 @@
             this.xóaToolStripMenuItem.Text = "Xóa";
             this.xóaToolStripMenuItem.Click += new System.EventHandler(this.xóaToolStripMenuItem_Click);
             // 
-            // thêmToolStripMenuItem
-            // 
-            this.thêmToolStripMenuItem.Name = "thêmToolStripMenuItem";
-            this.thêmToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
-            this.thêmToolStripMenuItem.Text = "Thêm";
-            // 
             // BaseListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
