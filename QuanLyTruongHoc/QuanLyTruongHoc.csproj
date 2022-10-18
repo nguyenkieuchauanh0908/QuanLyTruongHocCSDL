@@ -199,7 +199,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms\FormKhoa\" />
     <Folder Include="Forms\FormKyHoc\" />
     <Folder Include="Forms\FormMonHoc\" />
     <Folder Include="Forms\FormTrangChu\" />

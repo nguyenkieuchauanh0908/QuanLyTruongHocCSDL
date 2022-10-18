@@ -31,6 +31,9 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
             SqlParameter[] parameters = new SqlParameter[1];
             parameters[0] = new SqlParameter("@maSV", (obj as SinhVien).MaSV);
             return adoOperator.ExecuteQuery(query, parameters);
+
+            // ExecuteQuery: Những query không làm thay đổi lên database
+            // ExeecuteNonQuery: Những query làm thay đổi lên database (
         }
 
         public bool Add<T>(T obj) where T : IObject
@@ -45,7 +48,7 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
             parameters[5] = new SqlParameter("@ngaySinh", (obj as SinhVien).NgaySinh);
             parameters[6] = new SqlParameter("@tinhTrang", (obj as SinhVien).TinhTrang);
             parameters[7] = new SqlParameter("@maKhoa", (obj as SinhVien).MaKhoa);
-            return adoOperator.ExecuteNonQuery(query, parameters);
+            return adoOperator.ExecuteProcedure(query, parameters);
         }
 
         public bool Update<T>(T obj) where T : IObject
