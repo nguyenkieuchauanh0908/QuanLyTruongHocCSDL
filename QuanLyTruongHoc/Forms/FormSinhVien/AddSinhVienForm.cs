@@ -77,7 +77,7 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
 
         private void add_button_Click(object sender, EventArgs e)
         {
-            SinhVien sv = bindingSource.Current as SinhVien;
+            SinhVien sv = bindingSource.Current as SinhVien; // Chuyển về data object (ngôn ngữ chung để nói chuyện với nhau)
             if (sv == null) return;
             ValidationContext context = new ValidationContext(sv, null, null);
             IList<ValidationResult> validationResults = new List<ValidationResult>();

@@ -181,6 +181,6 @@
         private System.Windows.Forms.ToolStripMenuItem sửaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
         protected System.Windows.Forms.Button search_btn;
-        private System.Windows.Forms.Button add_btn;
+        protected System.Windows.Forms.Button add_btn;
     }
 }
