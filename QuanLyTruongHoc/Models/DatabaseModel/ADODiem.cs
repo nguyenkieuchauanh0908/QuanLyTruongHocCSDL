@@ -18,7 +18,7 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
         }
         public DataTable Load()
         {
-            string query = "execute getAllGV";
+            string query = "execute dbo.getAllBD";
             return adoOperator.ExecuteQuery(query);
         }
         public bool Add<T>(T obj) where T : IObject
