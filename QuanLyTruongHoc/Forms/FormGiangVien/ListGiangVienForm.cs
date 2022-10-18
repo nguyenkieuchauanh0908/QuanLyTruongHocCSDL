@@ -82,18 +82,18 @@ namespace QuanLyTruongHoc.Forms.FormGiangVien
 
         protected override void sửaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataRow row = ((DataRowView)dataGridView.SelectedRows[0].DataBoundItem).Row;
-            if (row != null)
-            {
-                GiangVien gv = ConverterHelper.ConvertDataRow<GiangVien>(row);
-                UpdateGiangVienForm updateGiangVienForm = new UpdateGiangVienForm(gv);
-                updateGiangVienForm.Show();
+            //DataRow row = ((DataRowView)dataGridView.SelectedRows[0].DataBoundItem).Row;
+            //if (row != null)
+            //{
+            //    GiangVien gv = ConverterHelper.ConvertDataRow<GiangVien>(row);
+            //    UpdateGiangVienForm updateGiangVienForm = new UpdateGiangVienForm(gv);
+            //    updateGiangVienForm.Show();
 
-            }
-            else
-            {
-                MessageBox.Show("Không có giảng viên nào được chọn");
-            }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Không có giảng viên nào được chọn");
+            //}
         }
 
         protected override void xóaToolStripMenuItem_Click(object sender, EventArgs e)
