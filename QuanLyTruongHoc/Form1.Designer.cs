@@ -30,7 +30,7 @@
         {
             this.sign_in_role = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.sign_in_qtv = new System.Windows.Forms.RadioButton();
             this.sign_in_teacher = new System.Windows.Forms.RadioButton();
             this.sign_in_student = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,6 +38,7 @@
             this.input_username = new System.Windows.Forms.TextBox();
             this.input_password = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.sign_in_btn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.sign_in_role.SuspendLayout();
@@ -61,7 +62,7 @@
             // 
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.Controls.Add(this.radioButton1);
+            this.flowLayoutPanel1.Controls.Add(this.sign_in_qtv);
             this.flowLayoutPanel1.Controls.Add(this.sign_in_teacher);
             this.flowLayoutPanel1.Controls.Add(this.sign_in_student);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -72,17 +73,17 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(229, 128);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
-            // radioButton1
+            // sign_in_qtv
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(3, 3);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(156, 30);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Quản trị viên";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.sign_in_qtv.AutoSize = true;
+            this.sign_in_qtv.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sign_in_qtv.Location = new System.Drawing.Point(3, 3);
+            this.sign_in_qtv.Name = "sign_in_qtv";
+            this.sign_in_qtv.Size = new System.Drawing.Size(156, 30);
+            this.sign_in_qtv.TabIndex = 1;
+            this.sign_in_qtv.TabStop = true;
+            this.sign_in_qtv.Text = "Quản trị viên";
+            this.sign_in_qtv.UseVisualStyleBackColor = true;
             // 
             // sign_in_teacher
             // 
@@ -149,6 +150,7 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.sign_in_btn);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.input_password);
             this.panel1.Controls.Add(this.sign_in_role);
@@ -159,6 +161,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(512, 253);
             this.panel1.TabIndex = 5;
+            // 
+            // sign_in_btn
+            // 
+            this.sign_in_btn.Location = new System.Drawing.Point(337, 188);
+            this.sign_in_btn.Name = "sign_in_btn";
+            this.sign_in_btn.Size = new System.Drawing.Size(147, 36);
+            this.sign_in_btn.TabIndex = 5;
+            this.sign_in_btn.Text = "Đăng nhập";
+            this.sign_in_btn.UseVisualStyleBackColor = true;
+            this.sign_in_btn.Click += new System.EventHandler(this.sign_in_btn_Click);
             // 
             // label3
             // 
@@ -207,7 +219,7 @@
 
         private System.Windows.Forms.GroupBox sign_in_role;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton sign_in_qtv;
         private System.Windows.Forms.RadioButton sign_in_teacher;
         private System.Windows.Forms.RadioButton sign_in_student;
         private System.Windows.Forms.Label label1;
@@ -217,6 +229,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button sign_in_btn;
     }
 }
 

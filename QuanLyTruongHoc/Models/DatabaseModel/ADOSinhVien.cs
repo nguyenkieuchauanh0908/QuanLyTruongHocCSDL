@@ -22,6 +22,7 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
         public DataTable Load()
         {
             string query = "select * from dbo.GetAllSinhVien()";
+
             return adoOperator.ExecuteQuery(query);
         }
 
@@ -73,6 +74,14 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
             SqlParameter[] parameters = new SqlParameter[1];
             parameters[0] = new SqlParameter("@maSV", (obj as SinhVien).MaSV);
             return adoOperator.ExecuteProcedure(query, parameters);
+        }
+
+        public DataTable GetSinhVienHocGiangVien(int maGV)
+        {
+            string query = "select * from dbo.GetSinhVienHocGiangVien(@maGV)";
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = new SqlParameter("@maGV", maGV);
+            return adoOperator.ExecuteQuery(query, parameters);
         }
 
         public DataTable Search<T>(T obj) where T : IObject
