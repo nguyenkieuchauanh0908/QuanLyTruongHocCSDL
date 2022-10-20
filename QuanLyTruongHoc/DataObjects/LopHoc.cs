@@ -30,5 +30,10 @@ namespace QuanLyTruongHoc.DataObjects
         [Required]
         [DisplayName("Mã giảng viên")]
         public int MaGiangVien { get; set; }
+
+        [DataName("da_xoa")]
+        [Required]
+        [DisplayName("Đã xóa")]
+        public bool DaXoa { get; set; }
     }
 }
