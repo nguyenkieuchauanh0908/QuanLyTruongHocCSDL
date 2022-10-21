@@ -1,5 +1,7 @@
 ﻿using QuanLyTruongHoc.Forms.FormLopHoc;
 using QuanLyTruongHoc.Forms.FormSinhVien;
+using QuanLyTruongHoc.Forms.FormKhoa;
+using QuanLyTruongHoc.Forms.FormKyHoc;
 using QuanLyTruongHoc.Models.DatabaseModel;
 using System;
 using System.Collections.Generic;
@@ -20,7 +22,7 @@ namespace QuanLyTruongHoc
 
         public static ADOManager Manager { get => adoManager;} 
         
-        string connectionString = @"Data Source=DESKTOP-7IT3958;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True";
+        string connectionString = @"Data Source=.\SQLEXPRESS01;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True";
 
         public MainForm()
         {
@@ -30,8 +32,12 @@ namespace QuanLyTruongHoc
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ListSinhVienForm listLopHocForm = new ListSinhVienForm();
-            listLopHocForm.Show();
+            /*ListSinhVienForm listLopHocForm = new ListSinhVienForm();
+            listLopHocForm.Show();*/
+            /*ListKhoaForm listKhoaForm = new ListKhoaForm();
+            listKhoaForm.Show();*/
+            ListKyHocForm listKyHocForm = new ListKyHocForm();
+            listKyHocForm.Show();
         }
     }
 }
