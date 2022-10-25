@@ -1,4 +1,5 @@
 ﻿using QuanLyTruongHoc.DataObjects;
+using QuanLyTruongHoc.Helpers;
 using QuanLyTruongHoc.Helpers.Convert;
 using QuanLyTruongHoc.Models.DatabaseModel;
 using System;
@@ -9,6 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyTruongHoc.Helpers;
 
 namespace QuanLyTruongHoc.Forms.FormSinhVien
 {
@@ -19,7 +21,16 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
         public ListSinhVienForm()
         {
             InitializeComponent();
-            dataGridView.DataSource = MainForm.Manager.SinhVien.Load();
+            
+            switch(MainForm.Manager.VaiTroHienTai())
+            {
+                case VAITRO.ADMIN:
+                    dataGridView.DataSource = MainForm.Manager.SinhVien.Load();
+                    break;
+                case VAITRO.GIANGVIEN:
+                    //dataGridView.DataSource = MainForm.Manager.SinhVien
+                    break;
+            }
         }
 
         private void InitializeComponent()
