@@ -1,6 +1,7 @@
 ﻿using QuanLyTruongHoc.Forms;
 using QuanLyTruongHoc.Forms.FormLopHoc;
 using QuanLyTruongHoc.Forms.FormSinhVien;
+using QuanLyTruongHoc.Forms.FormDiem;
 using System;
 using System.Collections.Generic;
 using System.Linq;
