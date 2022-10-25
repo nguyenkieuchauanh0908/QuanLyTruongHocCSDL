@@ -70,7 +70,7 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             }
             else
             {
-                MessageBox.Show("Không có sinh viên nào được chọn");
+                MessageBox.Show("Khum có sinh viên nào thêm vào");
             }
         }
 

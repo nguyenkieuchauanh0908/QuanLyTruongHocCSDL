@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>QuanLyTruongHoc</RootNamespace>
     <AssemblyName>QuanLyTruongHoc</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -76,7 +76,22 @@
     <Compile Include="Forms\DetailInfoForm.Designer.cs">
       <DependentUpon>DetailInfoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormDiem\AddDiemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDiem\ListDiemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDiem\ViewDiemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGiangVien\AddGiangVienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FormGiangVien\ListGiangVienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGiangVien\ViewGiangVienForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormLopHoc\AddLopHocForm.cs">
@@ -131,6 +146,24 @@
     <EmbeddedResource Include="Forms\DetailInfoForm.resx">
       <DependentUpon>DetailInfoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDiem\AddDiemForm.resx">
+      <DependentUpon>AddDiemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDiem\ListDiemForm.resx">
+      <DependentUpon>ListDiemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDiem\ViewDiemForm.resx">
+      <DependentUpon>ViewDiemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGiangVien\AddGiangVienForm.resx">
+      <DependentUpon>AddGiangVienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGiangVien\ListGiangVienForm.resx">
+      <DependentUpon>ListGiangVienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGiangVien\ViewGiangVienForm.resx">
+      <DependentUpon>ViewGiangVienForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormLopHoc\AddLopHocForm.resx">
       <DependentUpon>AddLopHocForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,7 +192,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.Khoa.datasource" />
+    <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.Diem.datasource" />
+    <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.GiangVien.datasource" />
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.LopHoc.datasource" />
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.SinhVien.datasource" />
     <None Include="Properties\Settings.settings">
@@ -178,6 +212,7 @@
   <ItemGroup>
     <Folder Include="Forms\FormDiem\" />
     <Folder Include="Forms\FormKhoa\" />
+
     <Folder Include="Forms\FormKyHoc\" />
     <Folder Include="Forms\FormMonHoc\" />
     <Folder Include="Forms\FormTrangChu\" />

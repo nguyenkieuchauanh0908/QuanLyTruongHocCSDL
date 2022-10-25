@@ -1,9 +1,11 @@
+﻿using QuanLyTruongHoc.Forms.FormGiangVien;
 ﻿using QuanLyTruongHoc.DataObjects;
 using QuanLyTruongHoc.Forms;
 using QuanLyTruongHoc.Forms.FormLopHoc;
 using QuanLyTruongHoc.Forms.FormSinhVien;
 using QuanLyTruongHoc.Helpers;
 using QuanLyTruongHoc.Models.DatabaseModel;
+using QuanLyTruongHoc.Forms.FormDiem;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,9 +23,10 @@ namespace QuanLyTruongHoc
     {
         private static ADOManager adoManager;
 
-        public static ADOManager Manager { get => adoManager;} 
-        
-        string connectionString = @"Data Source=DESKTOP-7IT3958;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True";
+        public static ADOManager Manager { get => adoManager;}
+
+        //string connectionString = @"Data Source=DESKTOP-7IT3958;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True";
+        string connectionString = @"Data Source=DESKTOP-7CJHVGV\SQLEXPRESS;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";//ChauAnh
 
         public MainForm()
         {
@@ -33,8 +36,10 @@ namespace QuanLyTruongHoc
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ListSinhVienForm listLopHocForm = new ListSinhVienForm();
-            listLopHocForm.Show();
+            ListSinhVienForm listSinhVienForm = new ListSinhVienForm();
+            ListGiangVienForm listGiangVienForm = new ListGiangVienForm();
+            ListDiemForm listDiemForm = new ListDiemForm();
+            listDiemForm.Show();
         }
 
         private void sign_in_btn_Click(object sender, EventArgs e)
