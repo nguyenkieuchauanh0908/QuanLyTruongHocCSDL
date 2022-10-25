@@ -18,13 +18,12 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
         }
         public bool Add<T>(T obj) where T : IObject
         {
-            string query = "execute InsertMonhoc @ten_mon_hoc,@so_tin_chi, @da_xoa ";
-            SqlParameter[] parameters = new SqlParameter[3];
+            string query = "dbo.InsertMonhoc";
+            SqlParameter[] parameters = new SqlParameter[2];
            // parameters[0] = new SqlParameter("@ma_mon_hoc", (obj as MonHoc).MaMonHoc);
             parameters[0] = new SqlParameter("@ten_mon_hoc", (obj as MonHoc).TenMonHoc);
             parameters[1] = new SqlParameter("@so_tin_chi", (obj as MonHoc).SoTinhChi);
-            parameters[2] = new SqlParameter("@da_xoa", (obj as MonHoc).TinhTrang);
-            return adoOperator.ExecuteNonQuery(query, parameters);
+            return adoOperator.ExecuteProcedure(query, parameters);
         }
 
         public bool Delete<T>(T obj) where T : IObject

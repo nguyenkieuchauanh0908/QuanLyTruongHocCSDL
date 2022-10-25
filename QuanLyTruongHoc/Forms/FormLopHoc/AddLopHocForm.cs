@@ -15,10 +15,8 @@ namespace QuanLyTruongHoc.Forms.FormLopHoc
         private System.Windows.Forms.BindingSource sinhVienBindingSource;
         private System.Windows.Forms.TextBox maGiangVienTextBox;
         private System.Windows.Forms.TextBox maKyHocTextBox;
-        private System.Windows.Forms.TextBox maLopTextBox;
         private System.Windows.Forms.TextBox maMonHocTextBox;
         private System.Windows.Forms.Button add_button;
-        private CheckBox daXoaCheckBox;
         private System.ComponentModel.IContainer components;
 
         //public AddLopHocForm(LopHoc lh) : base()
@@ -45,21 +43,15 @@ namespace QuanLyTruongHoc.Forms.FormLopHoc
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label maGiangVienLabel;
             System.Windows.Forms.Label maKyHocLabel;
-            System.Windows.Forms.Label maLopLabel;
             System.Windows.Forms.Label maMonHocLabel;
-            System.Windows.Forms.Label daXoaLabel;
             this.sinhVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.maGiangVienTextBox = new System.Windows.Forms.TextBox();
             this.maKyHocTextBox = new System.Windows.Forms.TextBox();
-            this.maLopTextBox = new System.Windows.Forms.TextBox();
             this.maMonHocTextBox = new System.Windows.Forms.TextBox();
             this.add_button = new System.Windows.Forms.Button();
-            this.daXoaCheckBox = new System.Windows.Forms.CheckBox();
             maGiangVienLabel = new System.Windows.Forms.Label();
             maKyHocLabel = new System.Windows.Forms.Label();
-            maLopLabel = new System.Windows.Forms.Label();
             maMonHocLabel = new System.Windows.Forms.Label();
-            daXoaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sinhVienBindingSource)).BeginInit();
@@ -67,62 +59,43 @@ namespace QuanLyTruongHoc.Forms.FormLopHoc
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(daXoaLabel);
-            this.panel1.Controls.Add(this.daXoaCheckBox);
             this.panel1.Controls.Add(this.add_button);
             this.panel1.Controls.Add(maGiangVienLabel);
             this.panel1.Controls.Add(this.maGiangVienTextBox);
             this.panel1.Controls.Add(maKyHocLabel);
             this.panel1.Controls.Add(this.maKyHocTextBox);
-            this.panel1.Controls.Add(maLopLabel);
-            this.panel1.Controls.Add(this.maLopTextBox);
             this.panel1.Controls.Add(maMonHocLabel);
             this.panel1.Controls.Add(this.maMonHocTextBox);
             // 
             // maGiangVienLabel
             // 
             maGiangVienLabel.AutoSize = true;
-            maGiangVienLabel.Location = new System.Drawing.Point(262, 134);
+            maGiangVienLabel.Location = new System.Drawing.Point(196, 109);
+            maGiangVienLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             maGiangVienLabel.Name = "maGiangVienLabel";
-            maGiangVienLabel.Size = new System.Drawing.Size(100, 17);
+            maGiangVienLabel.Size = new System.Drawing.Size(77, 13);
             maGiangVienLabel.TabIndex = 0;
             maGiangVienLabel.Text = "Mã giảng viên:";
             // 
             // maKyHocLabel
             // 
             maKyHocLabel.AutoSize = true;
-            maKyHocLabel.Location = new System.Drawing.Point(262, 162);
+            maKyHocLabel.Location = new System.Drawing.Point(196, 132);
+            maKyHocLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             maKyHocLabel.Name = "maKyHocLabel";
-            maKyHocLabel.Size = new System.Drawing.Size(76, 17);
+            maKyHocLabel.Size = new System.Drawing.Size(60, 13);
             maKyHocLabel.TabIndex = 2;
             maKyHocLabel.Text = "Mã kỳ học:";
-            // 
-            // maLopLabel
-            // 
-            maLopLabel.AutoSize = true;
-            maLopLabel.Location = new System.Drawing.Point(262, 190);
-            maLopLabel.Name = "maLopLabel";
-            maLopLabel.Size = new System.Drawing.Size(81, 17);
-            maLopLabel.TabIndex = 4;
-            maLopLabel.Text = "Mã lớp học:";
             // 
             // maMonHocLabel
             // 
             maMonHocLabel.AutoSize = true;
-            maMonHocLabel.Location = new System.Drawing.Point(262, 218);
+            maMonHocLabel.Location = new System.Drawing.Point(196, 177);
+            maMonHocLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             maMonHocLabel.Name = "maMonHocLabel";
-            maMonHocLabel.Size = new System.Drawing.Size(89, 17);
+            maMonHocLabel.Size = new System.Drawing.Size(69, 13);
             maMonHocLabel.TabIndex = 6;
             maMonHocLabel.Text = "Mã môn học:";
-            // 
-            // daXoaLabel
-            // 
-            daXoaLabel.AutoSize = true;
-            daXoaLabel.Location = new System.Drawing.Point(266, 265);
-            daXoaLabel.Name = "daXoaLabel";
-            daXoaLabel.Size = new System.Drawing.Size(56, 17);
-            daXoaLabel.TabIndex = 9;
-            daXoaLabel.Text = "Đã xóa:";
             // 
             // sinhVienBindingSource
             // 
@@ -131,59 +104,45 @@ namespace QuanLyTruongHoc.Forms.FormLopHoc
             // maGiangVienTextBox
             // 
             this.maGiangVienTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource, "MaGiangVien", true));
-            this.maGiangVienTextBox.Location = new System.Drawing.Point(362, 131);
+            this.maGiangVienTextBox.Location = new System.Drawing.Point(272, 106);
+            this.maGiangVienTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.maGiangVienTextBox.Name = "maGiangVienTextBox";
-            this.maGiangVienTextBox.Size = new System.Drawing.Size(100, 22);
+            this.maGiangVienTextBox.Size = new System.Drawing.Size(76, 20);
             this.maGiangVienTextBox.TabIndex = 1;
             // 
             // maKyHocTextBox
             // 
             this.maKyHocTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource, "MaKyHoc", true));
-            this.maKyHocTextBox.Location = new System.Drawing.Point(362, 159);
+            this.maKyHocTextBox.Location = new System.Drawing.Point(272, 129);
+            this.maKyHocTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.maKyHocTextBox.Name = "maKyHocTextBox";
-            this.maKyHocTextBox.Size = new System.Drawing.Size(100, 22);
+            this.maKyHocTextBox.Size = new System.Drawing.Size(76, 20);
             this.maKyHocTextBox.TabIndex = 3;
-            // 
-            // maLopTextBox
-            // 
-            this.maLopTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource, "MaLop", true));
-            this.maLopTextBox.Location = new System.Drawing.Point(362, 187);
-            this.maLopTextBox.Name = "maLopTextBox";
-            this.maLopTextBox.Size = new System.Drawing.Size(100, 22);
-            this.maLopTextBox.TabIndex = 5;
             // 
             // maMonHocTextBox
             // 
             this.maMonHocTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource, "MaMonHoc", true));
-            this.maMonHocTextBox.Location = new System.Drawing.Point(362, 215);
+            this.maMonHocTextBox.Location = new System.Drawing.Point(272, 175);
+            this.maMonHocTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.maMonHocTextBox.Name = "maMonHocTextBox";
-            this.maMonHocTextBox.Size = new System.Drawing.Size(100, 22);
+            this.maMonHocTextBox.Size = new System.Drawing.Size(76, 20);
             this.maMonHocTextBox.TabIndex = 7;
             // 
             // add_button
             // 
-            this.add_button.Location = new System.Drawing.Point(128, 312);
+            this.add_button.Location = new System.Drawing.Point(96, 254);
+            this.add_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.add_button.Name = "add_button";
-            this.add_button.Size = new System.Drawing.Size(140, 36);
+            this.add_button.Size = new System.Drawing.Size(105, 29);
             this.add_button.TabIndex = 8;
             this.add_button.Text = "Thêm";
             this.add_button.UseVisualStyleBackColor = true;
             this.add_button.Click += new System.EventHandler(this.add_button_Click);
             // 
-            // daXoaCheckBox
-            // 
-            this.daXoaCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bindingSource, "DaXoa", true));
-            this.daXoaCheckBox.Location = new System.Drawing.Point(328, 260);
-            this.daXoaCheckBox.Name = "daXoaCheckBox";
-            this.daXoaCheckBox.Size = new System.Drawing.Size(104, 24);
-            this.daXoaCheckBox.TabIndex = 10;
-            this.daXoaCheckBox.Text = "checkBox1";
-            this.daXoaCheckBox.UseVisualStyleBackColor = true;
-            // 
             // AddLopHocForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.ClientSize = new System.Drawing.Size(725, 688);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.ClientSize = new System.Drawing.Size(544, 559);
             this.Name = "AddLopHocForm";
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -197,8 +156,8 @@ namespace QuanLyTruongHoc.Forms.FormLopHoc
            
             LopHoc lh = new LopHoc();
             lh.MaGiangVien = int.Parse(maGiangVienTextBox.Text);
-            lh.MaKyHoc = Int32.Parse(maKyHocTextBox.Text);
-            lh.MaLop = Int32.Parse(maLopTextBox.Text);
+            lh.MaKyHoc = Int16.Parse(maKyHocTextBox.Text);
+            //lh.MaLop = Int32.Parse(maLopTextBox.Text);
             lh.MaMonHoc = Int32.Parse(maMonHocTextBox.Text);
            // lh.DaXoa = daXoaCheckBox.Enabled;
 

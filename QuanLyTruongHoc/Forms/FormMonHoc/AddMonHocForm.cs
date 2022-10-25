@@ -12,37 +12,29 @@ namespace QuanLyTruongHoc.Forms.FormMonHoc
 {
     internal class AddMonHocForm : DetailInfoForm<MonHoc>
     {
-        private TextBox maMonHocTextBox;
         private TextBox soTinhChiTextBox;
         private TextBox tenMonHocTextBox;
         private Button add_button;
-        private CheckBox tinhTrangCheckBox;
 
         public AddMonHocForm() : base()
         {
             InitializeComponent();
             //this.LoadDataFromObject(diem);
             //tinhTrangTextBox.Text = "Dang giang day";
-            tinhTrangCheckBox.Enabled = false;
+            //tinhTrangCheckBox.Enabled = false;
             Init();
         }
 
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label maMonHocLabel;
             System.Windows.Forms.Label soTinhChiLabel;
             System.Windows.Forms.Label tenMonHocLabel;
-            System.Windows.Forms.Label tinhTrangLabel;
-            this.maMonHocTextBox = new System.Windows.Forms.TextBox();
             this.soTinhChiTextBox = new System.Windows.Forms.TextBox();
             this.tenMonHocTextBox = new System.Windows.Forms.TextBox();
-            this.tinhTrangCheckBox = new System.Windows.Forms.CheckBox();
             this.add_button = new System.Windows.Forms.Button();
-            maMonHocLabel = new System.Windows.Forms.Label();
             soTinhChiLabel = new System.Windows.Forms.Label();
             tenMonHocLabel = new System.Windows.Forms.Label();
-            tinhTrangLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -50,23 +42,10 @@ namespace QuanLyTruongHoc.Forms.FormMonHoc
             // panel1
             // 
             this.panel1.Controls.Add(this.add_button);
-            this.panel1.Controls.Add(maMonHocLabel);
-            this.panel1.Controls.Add(this.maMonHocTextBox);
             this.panel1.Controls.Add(soTinhChiLabel);
             this.panel1.Controls.Add(this.soTinhChiTextBox);
             this.panel1.Controls.Add(tenMonHocLabel);
             this.panel1.Controls.Add(this.tenMonHocTextBox);
-            this.panel1.Controls.Add(tinhTrangLabel);
-            this.panel1.Controls.Add(this.tinhTrangCheckBox);
-            // 
-            // maMonHocLabel
-            // 
-            maMonHocLabel.AutoSize = true;
-            maMonHocLabel.Location = new System.Drawing.Point(210, 130);
-            maMonHocLabel.Name = "maMonHocLabel";
-            maMonHocLabel.Size = new System.Drawing.Size(89, 17);
-            maMonHocLabel.TabIndex = 0;
-            maMonHocLabel.Text = "Mã môn học:";
             // 
             // soTinhChiLabel
             // 
@@ -86,23 +65,6 @@ namespace QuanLyTruongHoc.Forms.FormMonHoc
             tenMonHocLabel.TabIndex = 4;
             tenMonHocLabel.Text = "Tên môn học:";
             // 
-            // tinhTrangLabel
-            // 
-            tinhTrangLabel.AutoSize = true;
-            tinhTrangLabel.Location = new System.Drawing.Point(210, 216);
-            tinhTrangLabel.Name = "tinhTrangLabel";
-            tinhTrangLabel.Size = new System.Drawing.Size(56, 17);
-            tinhTrangLabel.TabIndex = 6;
-            tinhTrangLabel.Text = "Đã xóa:";
-            // 
-            // maMonHocTextBox
-            // 
-            this.maMonHocTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource, "MaMonHoc", true));
-            this.maMonHocTextBox.Location = new System.Drawing.Point(311, 127);
-            this.maMonHocTextBox.Name = "maMonHocTextBox";
-            this.maMonHocTextBox.Size = new System.Drawing.Size(104, 22);
-            this.maMonHocTextBox.TabIndex = 1;
-            // 
             // soTinhChiTextBox
             // 
             this.soTinhChiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource, "SoTinhChi", true));
@@ -118,16 +80,6 @@ namespace QuanLyTruongHoc.Forms.FormMonHoc
             this.tenMonHocTextBox.Name = "tenMonHocTextBox";
             this.tenMonHocTextBox.Size = new System.Drawing.Size(104, 22);
             this.tenMonHocTextBox.TabIndex = 5;
-            // 
-            // tinhTrangCheckBox
-            // 
-            this.tinhTrangCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bindingSource, "TinhTrang", true));
-            this.tinhTrangCheckBox.Location = new System.Drawing.Point(311, 211);
-            this.tinhTrangCheckBox.Name = "tinhTrangCheckBox";
-            this.tinhTrangCheckBox.Size = new System.Drawing.Size(104, 24);
-            this.tinhTrangCheckBox.TabIndex = 7;
-            this.tinhTrangCheckBox.Text = "checkBox1";
-            this.tinhTrangCheckBox.UseVisualStyleBackColor = true;
             // 
             // add_button
             // 
@@ -155,11 +107,11 @@ namespace QuanLyTruongHoc.Forms.FormMonHoc
         private void add_button_Click(object sender, EventArgs e)
         {
             MonHoc mh = new MonHoc();
-            mh.MaMonHoc = int.Parse(maMonHocTextBox.Text);
+            //mh.MaMonHoc = int.Parse(maMonHocTextBox.Text);
             //mh.MaMonHoc = convert.toint32(maMonHocTextBox.Text);
-            mh.SoTinhChi = Int16.Parse(maMonHocTextBox.Text);
+            mh.SoTinhChi = Int16.Parse(soTinhChiTextBox.Text);
             mh.TenMonHoc= tenMonHocTextBox.Text;
-            mh.TinhTrang = tinhTrangCheckBox.Checked;
+           // mh.TinhTrang = tinhTrangCheckBox.Checked;
            
         
             if (mh == null) return;

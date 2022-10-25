@@ -20,13 +20,21 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
 
         public bool Add<T>(T obj) where T : IObject
         {
-            string query = " dbo.addLopHoc";
-            SqlParameter[] parameters = new SqlParameter[4];
+            string query = "dbo.insertLopHoc";
+            SqlParameter[] parameters = new SqlParameter[3];
+            // parameters[0] = new SqlParameter("@ma_mon_hoc", (obj as MonHoc).MaMonHoc);
             parameters[0] = new SqlParameter("@ma_ky_hoc", (obj as LopHoc).MaKyHoc);
             parameters[1] = new SqlParameter("@ma_mon_hoc", (obj as LopHoc).MaMonHoc);
             parameters[2] = new SqlParameter("@ma_giang_vien", (obj as LopHoc).MaGiangVien);
-            parameters[3] = new SqlParameter("@da_xoa", (obj as LopHoc).DaXoa);
-            return adoOperator.ExecuteNonQuery(query, parameters);
+            return adoOperator.ExecuteProcedure(query, parameters);
+            //string query = "dbo.insertLopHoc";
+            //SqlParameter[] parameters = new SqlParameter[3];
+            //parameters[0] = new SqlParameter("@ma_ky_hoc", (obj as LopHoc).MaKyHoc);
+            //parameters[1] = new SqlParameter("@ma_mon_hoc", (obj as LopHoc).MaMonHoc);
+            //parameters[2] = new SqlParameter("@ma_giang_vien", (obj as LopHoc).MaGiangVien);
+            ////parameters[3] = new SqlParameter("@ma_lop_hoc", (obj as LopHoc).MaLop);
+            //return adoOperator.ExecuteProcedure(query, parameters);
+
         }
 
         public bool Delete<T>(T obj) where T : IObject

@@ -31,28 +31,22 @@ namespace QuanLyTruongHoc
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //ListSinhVienForm listLopHocForm = new ListSinhVienForm();
-            //listLopHocForm.Show();
-
             ListLopHocForm listLopHocForm = new ListLopHocForm();
             //listLopHocForm.Show();
 
-            //ViewLopHocForm viewLopHocForm = new ViewLopHocForm();
+            ViewLopHocForm viewLopHocForm = new ViewLopHocForm();
             //viewLopHocForm.Show();
 
-            //ViewSinhVienForm viewSinhVienForm = new ViewSinhVienForm();
+            ViewSinhVienForm viewSinhVienForm = new ViewSinhVienForm();
             //viewSinhVienForm.Show();
-
-            //ViewLopHocForm viewLopHocForm = new ViewLopHocForm();
-            //viewLopHocForm.Show();
 
             AddLopHocForm addLopHocForm = new AddLopHocForm();
             addLopHocForm.Show();
 
-            //ListMonHocForm listMonHocForm = new ListMonHocForm();
+            ListMonHocForm listMonHocForm = new ListMonHocForm();
             //listMonHocForm.Show();
 
-            //AddMonHocForm addMonHocForm = new AddMonHocForm();
+            AddMonHocForm addMonHocForm = new AddMonHocForm();
             //addMonHocForm.Show();
 
         }

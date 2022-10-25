@@ -108,11 +108,10 @@ namespace QuanLyTruongHoc.Forms.FormMonHoc
             }
         }
 
-        private void add_button_Click(object sender, EventArgs e)
+        protected override void add_btn_Click(object sender, EventArgs e)
         {
             AddMonHocForm addMonHocForm = new AddMonHocForm();
             addMonHocForm.Show();
         }
-
     }
 }
