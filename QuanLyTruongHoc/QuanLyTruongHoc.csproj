@@ -34,6 +34,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -53,7 +60,6 @@
     <Compile Include="DataObjects\IObject.cs" />
     <Compile Include="DataObjects\Khoa.cs" />
     <Compile Include="DataObjects\KyHoc.cs" />
-    <Compile Include="DataObjects\Login.cs" />
     <Compile Include="DataObjects\LopHoc.cs" />
     <Compile Include="DataObjects\MonHoc.cs" />
     <Compile Include="DataObjects\QuanTriVien.cs" />
@@ -76,22 +82,31 @@
     <Compile Include="Forms\DetailInfoForm.Designer.cs">
       <DependentUpon>DetailInfoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormDiem\AddDiemForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormDiem\ListDiemForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormDiem\ViewDiemForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormGiangVien\AddGiangVienForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\FormGiangVien\ListGiangVienForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormGiangVien\ViewGiangVienForm.cs">
+    <Compile Include="Forms\FormKhoa\AddKhoaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormKhoa\ListKhoaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormKhoa\UpdateKhoaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormKhoa\ViewKhoaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormKyHoc\AddKyHocForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormKyHoc\ListKyHocForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormKyHoc\UpdateKyHocForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormKyHoc\ViewKyHocForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormLopHoc\AddLopHocForm.cs">
@@ -124,16 +139,9 @@
     <Compile Include="Forms\FormSinhVien\ListSinhVienForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HomeForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\HomeForm.Designer.cs">
-      <DependentUpon>HomeForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Helpers\Attributes\DataNameAttribute.cs" />
     <Compile Include="Helpers\Convert\ConverterHelper.cs" />
     <Compile Include="Helpers\Convert\ConvertToObject.cs" />
-    <Compile Include="Helpers\Enum.cs" />
     <Compile Include="Models\Authentication\LoginSession.cs" />
     <Compile Include="Models\DatabaseModel\ADODangNhap.cs" />
     <Compile Include="Models\DatabaseModel\ADODiem.cs" />
@@ -158,23 +166,29 @@
     <EmbeddedResource Include="Forms\DetailInfoForm.resx">
       <DependentUpon>DetailInfoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormDiem\AddDiemForm.resx">
-      <DependentUpon>AddDiemForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormKhoa\AddKhoaForm.resx">
+      <DependentUpon>AddKhoaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormDiem\ListDiemForm.resx">
-      <DependentUpon>ListDiemForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormKhoa\ListKhoaForm.resx">
+      <DependentUpon>ListKhoaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormDiem\ViewDiemForm.resx">
-      <DependentUpon>ViewDiemForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormKhoa\UpdateKhoaForm.resx">
+      <DependentUpon>UpdateKhoaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormGiangVien\AddGiangVienForm.resx">
-      <DependentUpon>AddGiangVienForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormKhoa\ViewKhoaForm.resx">
+      <DependentUpon>ViewKhoaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormGiangVien\ListGiangVienForm.resx">
-      <DependentUpon>ListGiangVienForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormKyHoc\AddKyHocForm.resx">
+      <DependentUpon>AddKyHocForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormGiangVien\ViewGiangVienForm.resx">
-      <DependentUpon>ViewGiangVienForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormKyHoc\ListKyHocForm.resx">
+      <DependentUpon>ListKyHocForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormKyHoc\UpdateKyHocForm.resx">
+      <DependentUpon>UpdateKyHocForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormKyHoc\ViewKyHocForm.resx">
+      <DependentUpon>ViewKyHocForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormLopHoc\AddLopHocForm.resx">
       <DependentUpon>AddLopHocForm.cs</DependentUpon>
@@ -206,9 +220,7 @@
     <EmbeddedResource Include="Forms\FormSinhVien\ViewSinhVienForm.resx">
       <DependentUpon>ViewSinhVienForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HomeForm.resx">
-      <DependentUpon>HomeForm.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -219,6 +231,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.Khoa.datasource" />
+    <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.KyHoc.datasource" />
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.Diem.datasource" />
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.GiangVien.datasource" />
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.LopHoc.datasource" />
@@ -239,6 +253,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\FormDiem\" />
+    <Folder Include="Forms\FormMonHoc\" />
     <Folder Include="Forms\FormKhoa\" />
 
     <Folder Include="Forms\FormKyHoc\" />
