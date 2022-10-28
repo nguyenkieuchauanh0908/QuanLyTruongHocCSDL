@@ -1,4 +1,4 @@
-﻿namespace QuanLyTruongHoc.Forms
+namespace QuanLyTruongHoc.Forms
 {
     partial class BaseListForm
     {
@@ -130,13 +130,15 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.xemToolStripMenuItem,
             this.sửaToolStripMenuItem,
-            this.xóaToolStripMenuItem});
+            this.xóaToolStripMenuItem,
+            });
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(121, 100);
             // 
             // xemToolStripMenuItem
             // 
             this.xemToolStripMenuItem.Name = "xemToolStripMenuItem";
+
             this.xemToolStripMenuItem.Size = new System.Drawing.Size(120, 32);
             this.xemToolStripMenuItem.Text = "Xem";
             this.xemToolStripMenuItem.Click += new System.EventHandler(this.xemToolStripMenuItem_Click);
@@ -144,14 +146,18 @@
             // sửaToolStripMenuItem
             // 
             this.sửaToolStripMenuItem.Name = "sửaToolStripMenuItem";
+
             this.sửaToolStripMenuItem.Size = new System.Drawing.Size(120, 32);
+
             this.sửaToolStripMenuItem.Text = "Sửa";
             this.sửaToolStripMenuItem.Click += new System.EventHandler(this.sửaToolStripMenuItem_Click);
             // 
             // xóaToolStripMenuItem
             // 
             this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
+
             this.xóaToolStripMenuItem.Size = new System.Drawing.Size(120, 32);
+
             this.xóaToolStripMenuItem.Text = "Xóa";
             this.xóaToolStripMenuItem.Click += new System.EventHandler(this.xóaToolStripMenuItem_Click);
             // 
@@ -189,6 +195,6 @@
         private System.Windows.Forms.ToolStripMenuItem sửaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
         protected System.Windows.Forms.Button search_btn;
-        private System.Windows.Forms.Button add_btn;
+        protected System.Windows.Forms.Button add_btn;
     }
 }

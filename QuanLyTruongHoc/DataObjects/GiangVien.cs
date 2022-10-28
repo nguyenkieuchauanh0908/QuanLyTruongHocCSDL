@@ -15,7 +15,7 @@ namespace QuanLyTruongHoc.DataObjects
         [DataName("ten")]
         [DisplayName("Tên")]
         [Required]
-        public int Ten { get; set; }
+        public string Ten { get; set; }
 
         [DataName("ho")]
         [DisplayName("Họ")]
