@@ -206,8 +206,6 @@
     </Compile>
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.Khoa.datasource" />
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.KyHoc.datasource" />
-    <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.LopHoc.datasource" />
-    <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.SinhVien.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

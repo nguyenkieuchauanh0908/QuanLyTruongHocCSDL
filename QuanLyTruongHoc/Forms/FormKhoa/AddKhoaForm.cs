@@ -11,30 +11,36 @@ namespace QuanLyTruongHoc.Forms.FormKhoa
 {
     internal class AddKhoaForm : DetailInfoForm<Khoa>
     {
-        private DevExpress.XtraEditors.CheckEdit daXoaCheckEdit;
-        private DevExpress.XtraEditors.TextEdit maKhoaTextEdit;
+        private CheckBox daXoaCheckBox;
+        private TextBox maKhoaTextBox;
         private Button add_button;
-        private DevExpress.XtraEditors.TextEdit tenKhoaTextEdit;
+        private TextBox tenKhoaTextBox;
 
         public AddKhoaForm() : base()
         {
             InitializeComponent();
             bindingSource.DataSource = new Khoa();
+            Init();
         }
-        public AddKhoaForm(Khoa k) : base()
+        public AddKhoaForm(Khoa khoa) : base()
         {
             InitializeComponent();
             
+            
         }
-
+        protected override void Init()
+        {
+            this.daXoaCheckBox.Enabled = false;
+            this.maKhoaTextBox.Enabled = false;
+        }
         private void InitializeComponent()
         {
             System.Windows.Forms.Label daXoaLabel;
             System.Windows.Forms.Label maKhoaLabel;
             System.Windows.Forms.Label tenKhoaLabel;
-            this.daXoaCheckEdit = new DevExpress.XtraEditors.CheckEdit();
-            this.maKhoaTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.tenKhoaTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.daXoaCheckBox = new System.Windows.Forms.CheckBox();
+            this.maKhoaTextBox = new System.Windows.Forms.TextBox();
+            this.tenKhoaTextBox = new System.Windows.Forms.TextBox();
             this.add_button = new System.Windows.Forms.Button();
             daXoaLabel = new System.Windows.Forms.Label();
             maKhoaLabel = new System.Windows.Forms.Label();
@@ -42,89 +48,89 @@ namespace QuanLyTruongHoc.Forms.FormKhoa
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.daXoaCheckEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maKhoaTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tenKhoaTextEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(daXoaLabel);
-            this.panel1.Controls.Add(this.daXoaCheckEdit);
+            this.panel1.Controls.Add(this.daXoaCheckBox);
             this.panel1.Controls.Add(maKhoaLabel);
-            this.panel1.Controls.Add(this.maKhoaTextEdit);
+            this.panel1.Controls.Add(this.maKhoaTextBox);
             this.panel1.Controls.Add(tenKhoaLabel);
-            this.panel1.Controls.Add(this.tenKhoaTextEdit);
-            this.panel1.Size = new System.Drawing.Size(816, 494);
+            this.panel1.Controls.Add(this.tenKhoaTextBox);
+            this.panel1.Size = new System.Drawing.Size(816, 581);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.add_button);
-            this.panel2.Location = new System.Drawing.Point(0, 494);
-            this.panel2.Size = new System.Drawing.Size(816, 191);
+            this.panel2.Location = new System.Drawing.Point(0, 581);
+            this.panel2.Size = new System.Drawing.Size(816, 158);
             this.panel2.Controls.SetChildIndex(this.add_button, 0);
             // 
             // daXoaLabel
             // 
             daXoaLabel.AutoSize = true;
-            daXoaLabel.Location = new System.Drawing.Point(127, 141);
+            daXoaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            daXoaLabel.Location = new System.Drawing.Point(61, 275);
             daXoaLabel.Name = "daXoaLabel";
-            daXoaLabel.Size = new System.Drawing.Size(67, 20);
+            daXoaLabel.Size = new System.Drawing.Size(105, 30);
             daXoaLabel.TabIndex = 0;
             daXoaLabel.Text = "Đã Xóa:";
             // 
             // maKhoaLabel
             // 
             maKhoaLabel.AutoSize = true;
-            maKhoaLabel.Location = new System.Drawing.Point(127, 187);
+            maKhoaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            maKhoaLabel.Location = new System.Drawing.Point(61, 339);
             maKhoaLabel.Name = "maKhoaLabel";
-            maKhoaLabel.Size = new System.Drawing.Size(76, 20);
+            maKhoaLabel.Size = new System.Drawing.Size(122, 30);
             maKhoaLabel.TabIndex = 2;
             maKhoaLabel.Text = "Mã Khoa:";
             // 
             // tenKhoaLabel
             // 
             tenKhoaLabel.AutoSize = true;
-            tenKhoaLabel.Location = new System.Drawing.Point(127, 244);
+            tenKhoaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tenKhoaLabel.Location = new System.Drawing.Point(61, 414);
             tenKhoaLabel.Name = "tenKhoaLabel";
-            tenKhoaLabel.Size = new System.Drawing.Size(81, 20);
+            tenKhoaLabel.Size = new System.Drawing.Size(130, 30);
             tenKhoaLabel.TabIndex = 4;
             tenKhoaLabel.Text = "Tên Khoa:";
             // 
-            // daXoaCheckEdit
+            // daXoaCheckBox
             // 
-            this.daXoaCheckEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingSource, "DaXoa", true));
-            this.daXoaCheckEdit.Location = new System.Drawing.Point(255, 132);
-            this.daXoaCheckEdit.Margin = new System.Windows.Forms.Padding(9);
-            this.daXoaCheckEdit.Name = "daXoaCheckEdit";
-            this.daXoaCheckEdit.Properties.Caption = "checkEdit1";
-            this.daXoaCheckEdit.Size = new System.Drawing.Size(507, 29);
-            this.daXoaCheckEdit.TabIndex = 1;
+            this.daXoaCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bindingSource, "DaXoa", true));
+            this.daXoaCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.daXoaCheckBox.Location = new System.Drawing.Point(198, 270);
+            this.daXoaCheckBox.Name = "daXoaCheckBox";
+            this.daXoaCheckBox.Size = new System.Drawing.Size(426, 42);
+            this.daXoaCheckBox.TabIndex = 1;
+            this.daXoaCheckBox.Text = "checkBox1";
+            this.daXoaCheckBox.UseVisualStyleBackColor = true;
             // 
-            // maKhoaTextEdit
+            // maKhoaTextBox
             // 
-            this.maKhoaTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingSource, "MaKhoa", true));
-            this.maKhoaTextEdit.Location = new System.Drawing.Point(255, 179);
-            this.maKhoaTextEdit.Margin = new System.Windows.Forms.Padding(9);
-            this.maKhoaTextEdit.Name = "maKhoaTextEdit";
-            this.maKhoaTextEdit.Size = new System.Drawing.Size(311, 28);
-            this.maKhoaTextEdit.TabIndex = 3;
-            this.maKhoaTextEdit.EditValueChanged += new System.EventHandler(this.maKhoaTextEdit_EditValueChanged);
+            this.maKhoaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource, "MaKhoa", true));
+            this.maKhoaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maKhoaTextBox.Location = new System.Drawing.Point(198, 339);
+            this.maKhoaTextBox.Name = "maKhoaTextBox";
+            this.maKhoaTextBox.Size = new System.Drawing.Size(426, 37);
+            this.maKhoaTextBox.TabIndex = 3;
             // 
-            // tenKhoaTextEdit
+            // tenKhoaTextBox
             // 
-            this.tenKhoaTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingSource, "TenKhoa", true));
-            this.tenKhoaTextEdit.Location = new System.Drawing.Point(255, 236);
-            this.tenKhoaTextEdit.Margin = new System.Windows.Forms.Padding(9);
-            this.tenKhoaTextEdit.Name = "tenKhoaTextEdit";
-            this.tenKhoaTextEdit.Size = new System.Drawing.Size(311, 28);
-            this.tenKhoaTextEdit.TabIndex = 5;
+            this.tenKhoaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource, "TenKhoa", true));
+            this.tenKhoaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tenKhoaTextBox.Location = new System.Drawing.Point(198, 411);
+            this.tenKhoaTextBox.Name = "tenKhoaTextBox";
+            this.tenKhoaTextBox.Size = new System.Drawing.Size(426, 37);
+            this.tenKhoaTextBox.TabIndex = 5;
             // 
             // add_button
             // 
-            this.add_button.Location = new System.Drawing.Point(239, 23);
+            this.add_button.Location = new System.Drawing.Point(254, 19);
             this.add_button.Name = "add_button";
-            this.add_button.Size = new System.Drawing.Size(81, 36);
+            this.add_button.Size = new System.Drawing.Size(97, 31);
             this.add_button.TabIndex = 1;
             this.add_button.Text = "Thêm";
             this.add_button.UseVisualStyleBackColor = true;
@@ -133,15 +139,12 @@ namespace QuanLyTruongHoc.Forms.FormKhoa
             // AddKhoaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.ClientSize = new System.Drawing.Size(816, 685);
+            this.ClientSize = new System.Drawing.Size(816, 739);
             this.Name = "AddKhoaForm";
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.daXoaCheckEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.maKhoaTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tenKhoaTextEdit.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -171,11 +174,6 @@ namespace QuanLyTruongHoc.Forms.FormKhoa
             {
                 MessageBox.Show("Thêm thất bại");
             }
-        }
-
-        private void maKhoaTextEdit_EditValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
