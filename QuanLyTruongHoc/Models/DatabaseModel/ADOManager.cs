@@ -14,6 +14,8 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
         private ADOSinhVien sinhVien;
         private ADOLopHoc lopHoc;
         private ADOGiangVien giangVien;
+        private ADODiem diem;
+        private ADOMonHoc monHoc;
 
         private ADOKhoa khoa;
         private ADOKyHoc kyhoc;
@@ -29,6 +31,7 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
         public ADOSinhVien SinhVien { get => sinhVien; }
         public ADOGiangVien GiangVien { get => giangVien; }
         public ADOLopHoc LopHoc { get => lopHoc; }
+        public ADOMonHoc MonHoc { get => monHoc; }
         public ADODiem Diem { get => diem; }
         public ADODangNhap DangNhap { get => dangNhap; }
 
@@ -41,6 +44,8 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
             lopHoc = new ADOLopHoc(adoOperator);
             khoa = new ADOKhoa(adoOperator);
             kyhoc = new ADOKyHoc(adoOperator);
+            monHoc = new ADOMonHoc(adoOperator);
+
             dangNhap = new ADODangNhap(adoOperator);
         }
 

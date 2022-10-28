@@ -85,10 +85,9 @@ namespace QuanLyTruongHoc.Forms
             // 
             // add_btn
             // 
-            this.add_btn.Location = new System.Drawing.Point(685, 221);
-            this.add_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.add_btn.Location = new System.Drawing.Point(609, 177);
             this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(84, 29);
+            this.add_btn.Size = new System.Drawing.Size(75, 23);
             this.add_btn.TabIndex = 1;
             this.add_btn.Text = "Thêm";
             this.add_btn.UseVisualStyleBackColor = true;

@@ -115,6 +115,18 @@
     <Compile Include="Forms\FormLopHoc\ListLopHocForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\FormLopHoc\ViewLopHocForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMonHoc\AddMonHocForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMonHoc\ListMonHocForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMonHoc\ViewMonHocForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FormSinhVien\AddSinhVienForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +193,21 @@
     <EmbeddedResource Include="Forms\FormLopHoc\AddLopHocForm.resx">
       <DependentUpon>AddLopHocForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLopHoc\ListLopHocForm.resx">
+      <DependentUpon>ListLopHocForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLopHoc\ViewLopHocForm.resx">
+      <DependentUpon>ViewLopHocForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMonHoc\AddMonHocForm.resx">
+      <DependentUpon>AddMonHocForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMonHoc\ListMonHocForm.resx">
+      <DependentUpon>ListMonHocForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMonHoc\ViewMonHocForm.resx">
+      <DependentUpon>ViewMonHocForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSinhVien\AddSinhVienForm.resx">
       <DependentUpon>AddSinhVienForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,6 +233,11 @@
     </Compile>
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.Khoa.datasource" />
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.KyHoc.datasource" />
+    <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.Diem.datasource" />
+    <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.GiangVien.datasource" />
+    <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.LopHoc.datasource" />
+    <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.MonHoc.datasource" />
+    <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.SinhVien.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -222,6 +254,9 @@
   <ItemGroup>
     <Folder Include="Forms\FormDiem\" />
     <Folder Include="Forms\FormMonHoc\" />
+    <Folder Include="Forms\FormKhoa\" />
+
+    <Folder Include="Forms\FormKyHoc\" />
     <Folder Include="Forms\FormTrangChu\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

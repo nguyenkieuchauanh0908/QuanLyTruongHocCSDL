@@ -1,7 +1,8 @@
+﻿using QuanLyTruongHoc.Forms.FormLopHoc;
+using QuanLyTruongHoc.Forms.FormMonHoc;
 ﻿using QuanLyTruongHoc.Forms.FormGiangVien;
 ﻿using QuanLyTruongHoc.DataObjects;
 using QuanLyTruongHoc.Forms;
-using QuanLyTruongHoc.Forms.FormLopHoc;
 using QuanLyTruongHoc.Forms.FormSinhVien;
 
 using QuanLyTruongHoc.Forms.FormKhoa;
@@ -32,7 +33,7 @@ namespace QuanLyTruongHoc
         public static ADOManager Manager { get => adoManager;}
 
         //string connectionString = @"Data Source=DESKTOP-7IT3958;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True";
-        string connectionString = @"Data Source=DESKTOP-7CJHVGV\SQLEXPRESS;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";//ChauAnh
+        string connectionString = @"Data Source=DESKTOP-7CJHVGV\SQLEXPRESS;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
 
         public MainForm()
@@ -43,6 +44,24 @@ namespace QuanLyTruongHoc
 
         private void button1_Click(object sender, EventArgs e)
         {
+            ListLopHocForm listLopHocForm = new ListLopHocForm();
+            //listLopHocForm.Show();
+
+            ViewLopHocForm viewLopHocForm = new ViewLopHocForm();
+            //viewLopHocForm.Show();
+
+            ViewSinhVienForm viewSinhVienForm = new ViewSinhVienForm();
+            //viewSinhVienForm.Show();
+
+            AddLopHocForm addLopHocForm = new AddLopHocForm();
+            addLopHocForm.Show();
+
+            ListMonHocForm listMonHocForm = new ListMonHocForm();
+            //listMonHocForm.Show();
+
+            AddMonHocForm addMonHocForm = new AddMonHocForm();
+            //addMonHocForm.Show();
+
             ListSinhVienForm listSinhVienForm = new ListSinhVienForm();
             ListGiangVienForm listGiangVienForm = new ListGiangVienForm();
             ListDiemForm listDiemForm = new ListDiemForm();

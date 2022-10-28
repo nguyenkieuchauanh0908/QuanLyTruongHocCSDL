@@ -19,7 +19,7 @@ namespace QuanLyTruongHoc.DataObjects
         [DataName("ma_ky_hoc")]
         [Required]
         [DisplayName("Mã kỳ học")]
-        public int MaKyHoc { get; set; }
+        public short MaKyHoc { get; set; }
 
         [DataName("ma_mon_hoc")]
         [Required]
@@ -30,5 +30,10 @@ namespace QuanLyTruongHoc.DataObjects
         [Required]
         [DisplayName("Mã giảng viên")]
         public int MaGiangVien { get; set; }
+
+        [DataName("da_xoa")]
+        [Required]
+        [DisplayName("Đã xóa")]
+        public bool DaXoa { get; set; }
     }
 }
