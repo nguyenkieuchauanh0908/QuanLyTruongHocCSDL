@@ -24,12 +24,12 @@ namespace QuanLyTruongHoc.DataObjects
         [DataName("diem_giưa_ky")]
         [DisplayName("Điểm giữa kỳ")]
         [Required]
-        public string diem_giua_ky { get; set; }
+        public double diem_giua_ky { get; set; }
 
         [DataName("diem_cuoi_ky")]
         [DisplayName("Điểm cuối kỳ")]
         [Required]
-        public string diem_cuoi_ky { get; set; }
+        public double diem_cuoi_ky { get; set; }
 
 
         public override string ToString()

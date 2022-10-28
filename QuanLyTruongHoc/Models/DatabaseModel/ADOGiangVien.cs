@@ -25,14 +25,15 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
         {
             string query = "execute addGV @ten,@ho,@email,@gioiTinh,@sdt,@diaChi,@ngaySinh,@tinhTrang";
             SqlParameter[] parameters = new SqlParameter[8];
+            //parameters[0] = new SqlParameter("@id", (obj as GiangVien).MaGV);
             parameters[0] = new SqlParameter("@ten", (obj as GiangVien).Ten);
             parameters[1] = new SqlParameter("@ho", (obj as GiangVien).Ho);
             parameters[2] = new SqlParameter("@email", (obj as GiangVien).Email);
             parameters[3] = new SqlParameter("@gioiTinh", (obj as GiangVien).GioiTinh);
             parameters[4] = new SqlParameter("@sdt", (obj as GiangVien).SoDT);
-            parameters[4] = new SqlParameter("@diaChi", (obj as GiangVien).DiaChi);
-            parameters[5] = new SqlParameter("@ngaySinh", (obj as GiangVien).NgaySinh);
-            parameters[6] = new SqlParameter("@tinhTrang", (obj as GiangVien).TinhTrang);
+            parameters[5] = new SqlParameter("@diaChi", (obj as GiangVien).DiaChi);
+            parameters[6] = new SqlParameter("@ngaySinh", (obj as GiangVien).NgaySinh);
+            parameters[7] = new SqlParameter("@tinhTrang", (obj as GiangVien).TinhTrang);
 
             return adoOperator.ExecuteNonQuery(query, parameters);
         }
@@ -61,16 +62,17 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
 
         public bool Update<T>(T obj) where T : IObject
         {
-            string query = "execute updateGV @ten,@ho,@email,@gioiTinh,@sdt,@diaChi,@ngaySinh,@tinhTrang";
-            SqlParameter[] parameters = new SqlParameter[8];
-            parameters[0] = new SqlParameter("@ten", (obj as GiangVien).Ten);
-            parameters[1] = new SqlParameter("@ho", (obj as GiangVien).Ho);
-            parameters[2] = new SqlParameter("@email", (obj as GiangVien).Email);
-            parameters[3] = new SqlParameter("@gioiTinh", (obj as GiangVien).GioiTinh);
-            parameters[4] = new SqlParameter("@sdt", (obj as GiangVien).SoDT);
-            parameters[4] = new SqlParameter("@diaChi", (obj as GiangVien).DiaChi);
-            parameters[5] = new SqlParameter("@ngaySinh", (obj as GiangVien).NgaySinh);
-            parameters[6] = new SqlParameter("@tinhTrang", (obj as GiangVien).TinhTrang);
+            string query = "execute updateGV @id, @ten,@ho,@email,@gioiTinh,@sdt,@diaChi,@ngaySinh,@tinhTrang";
+            SqlParameter[] parameters = new SqlParameter[9];
+            parameters[0] = new SqlParameter("@id", (obj as GiangVien).MaGV);
+            parameters[1] = new SqlParameter("@ten", (obj as GiangVien).Ten);
+            parameters[2] = new SqlParameter("@ho", (obj as GiangVien).Ho);
+            parameters[3] = new SqlParameter("@email", (obj as GiangVien).Email);
+            parameters[4] = new SqlParameter("@gioiTinh", (obj as GiangVien).GioiTinh);
+            parameters[5] = new SqlParameter("@sdt", (obj as GiangVien).SoDT);
+            parameters[6] = new SqlParameter("@diaChi", (obj as GiangVien).DiaChi);
+            parameters[7] = new SqlParameter("@ngaySinh", (obj as GiangVien).NgaySinh);
+            parameters[8] = new SqlParameter("@tinhTrang", (obj as GiangVien).TinhTrang);
 
             return adoOperator.ExecuteNonQuery(query, parameters);
         }
