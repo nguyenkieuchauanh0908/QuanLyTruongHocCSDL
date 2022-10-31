@@ -24,8 +24,6 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
         public ADOKyHoc KyHoc { get => kyhoc; }
 
 
-        private ADODiem diem;
-
         private ADODangNhap dangNhap;
 
         public ADOSinhVien SinhVien { get => sinhVien; }
