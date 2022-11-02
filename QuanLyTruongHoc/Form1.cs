@@ -44,26 +44,26 @@ namespace QuanLyTruongHoc
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ListLopHocForm listLopHocForm = new ListLopHocForm();
-            //listLopHocForm.Show();
+            //ListLopHocForm listLopHocForm = new ListLopHocForm();
+            ////listLopHocForm.Show();
 
-            ViewLopHocForm viewLopHocForm = new ViewLopHocForm();
-            //viewLopHocForm.Show();
+            //ViewLopHocForm viewLopHocForm = new ViewLopHocForm();
+            ////viewLopHocForm.Show();
 
-            ViewSinhVienForm viewSinhVienForm = new ViewSinhVienForm();
-            //viewSinhVienForm.Show();
+            //ViewSinhVienForm viewSinhVienForm = new ViewSinhVienForm();
+            ////viewSinhVienForm.Show();
 
-            AddLopHocForm addLopHocForm = new AddLopHocForm();
-            addLopHocForm.Show();
+            //AddLopHocForm addLopHocForm = new AddLopHocForm();
+            ////addLopHocForm.Show();
 
-            ListMonHocForm listMonHocForm = new ListMonHocForm();
-            //listMonHocForm.Show();
+            //ListMonHocForm listMonHocForm = new ListMonHocForm();
+            ////listMonHocForm.Show();
 
-            AddMonHocForm addMonHocForm = new AddMonHocForm();
-            //addMonHocForm.Show();
+            //AddMonHocForm addMonHocForm = new AddMonHocForm();
+            ////addMonHocForm.Show();
 
-            ListSinhVienForm listSinhVienForm = new ListSinhVienForm();
-            ListGiangVienForm listGiangVienForm = new ListGiangVienForm();
+            //ListSinhVienForm listSinhVienForm = new ListSinhVienForm();
+            //ListGiangVienForm listGiangVienForm = new ListGiangVienForm();
             ListDiemForm listDiemForm = new ListDiemForm();
             listDiemForm.Show();
         }
