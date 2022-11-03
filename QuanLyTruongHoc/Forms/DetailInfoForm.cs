@@ -50,7 +50,7 @@ namespace QuanLyTruongHoc.Forms
 
         protected void LoadDataFromObject(T obj)
         {
-            bindingSource.DataSource = obj;
+            bindingSource.DataSource = obj; // List cac lop hoc da dang ky tu database
         }
     }
 }
