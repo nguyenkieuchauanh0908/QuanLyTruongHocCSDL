@@ -22,6 +22,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyTruongHoc.Forms.FormTrangChu.FormTrangChuSV;
 
 namespace QuanLyTruongHoc
 {
@@ -44,7 +45,7 @@ namespace QuanLyTruongHoc
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CacLopHocDaThamGia form = new CacLopHocDaThamGia(Manager.CurrentLogin.id);
+            CacLopHocDaThamGia form = new CacLopHocDaThamGia();
             form.Show();
         }
 
@@ -71,8 +72,17 @@ namespace QuanLyTruongHoc
             if (Manager.CheckDangNhap(login))
             {
                 MessageBox.Show("Đăng nhập thành công");
-                HomeForm home = new HomeForm();
-                home.Show();
+                switch (role)
+                {
+                    case VAITRO.SINHVIEN:
+                        FormHomeSV formHomeSV = new FormHomeSV();
+                        formHomeSV.Show();
+                        break;
+                    case VAITRO.GIANGVIEN:
+                        //FormHomeGV formHomeGV = new FormHomeGV();
+                        //formHomeGV.Show();
+                        break;
+                }
             }
             else
             {

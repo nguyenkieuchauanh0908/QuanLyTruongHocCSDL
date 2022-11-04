@@ -86,7 +86,7 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
 
         public DataTable LoadLopHocWithSVId(int id)
         {
-            string query = "select ma_lop_hoc from CACLOPHOCTHAMGIA where id = @ma_sinh_vien";
+            string query = "select ma_lop_hoc, ten_mon_hoc, ma_ky_hoc from CACLOPHOCTHAMGIA where id = @ma_sinh_vien";
             SqlParameter[] parameters = new SqlParameter[1];
             parameters[0] = new SqlParameter("@ma_sinh_vien", id);
             return adoOperator.ExecuteQuery(query, parameters);
