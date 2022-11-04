@@ -51,6 +51,8 @@ namespace QuanLyTruongHoc
 
         private void sign_in_btn_Click(object sender, EventArgs e)
         {
+            
+
             string username = input_username.Text;
             string password = input_password.Text;
             VAITRO role = VAITRO.GIANGVIEN;
@@ -72,6 +74,9 @@ namespace QuanLyTruongHoc
             if (Manager.CheckDangNhap(login))
             {
                 MessageBox.Show("Đăng nhập thành công");
+                ListSinhVienForm svForm = new ListSinhVienForm();
+                svForm.Show();
+                return;
                 switch (role)
                 {
                     case VAITRO.SINHVIEN:
