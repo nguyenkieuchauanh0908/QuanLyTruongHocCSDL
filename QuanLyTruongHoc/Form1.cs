@@ -75,9 +75,6 @@ namespace QuanLyTruongHoc
             if (Manager.CheckDangNhap(login))
             {
                 MessageBox.Show("Đăng nhập thành công");
-                ListSinhVienForm svForm = new ListSinhVienForm();
-                svForm.Show();
-                return;
                 switch (role)
                 {
                     case VAITRO.SINHVIEN:
