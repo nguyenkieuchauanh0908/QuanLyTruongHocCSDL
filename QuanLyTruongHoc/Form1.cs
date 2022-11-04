@@ -22,6 +22,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyTruongHoc.Forms.FormChucNangGV;
 using QuanLyTruongHoc.Forms.FormTrangChu.FormTrangChuSV;
 
 namespace QuanLyTruongHoc
@@ -34,7 +35,7 @@ namespace QuanLyTruongHoc
         public static ADOManager Manager { get => adoManager;}
 
         //string connectionString = @"Data Source=DESKTOP-7IT3958;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True";
-        string connectionString = @"Data Source=DESKTOP-7IT3958;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True";
+        string connectionString = @"Data Source=.\SQLEXPRESS01;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True";
 
 
         public MainForm()
@@ -84,10 +85,13 @@ namespace QuanLyTruongHoc
                         formHomeSV.Show();
                         break;
                     case VAITRO.GIANGVIEN:
-                        //FormHomeGV formHomeGV = new FormHomeGV();
-                        //formHomeGV.Show();
+                        ListDanhSachLop listDanhSachLop = new ListDanhSachLop(login);
+                        listDanhSachLop.Show();
                         break;
                 }
+                //HomeForm home = new HomeForm();
+                //home.Show();
+                
             }
             else
             {

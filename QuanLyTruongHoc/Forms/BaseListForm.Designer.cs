@@ -83,10 +83,9 @@ namespace QuanLyTruongHoc.Forms
             // 
             // add_btn
             // 
-            this.add_btn.Location = new System.Drawing.Point(628, 173);
-            this.add_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.add_btn.Location = new System.Drawing.Point(612, 211);
             this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(67, 27);
+            this.add_btn.Size = new System.Drawing.Size(75, 33);
             this.add_btn.TabIndex = 1;
             this.add_btn.Text = "Thêm";
             this.add_btn.UseVisualStyleBackColor = true;
@@ -133,21 +132,21 @@ namespace QuanLyTruongHoc.Forms
             // xemToolStripMenuItem
             // 
             this.xemToolStripMenuItem.Name = "xemToolStripMenuItem";
-            this.xemToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.xemToolStripMenuItem.Size = new System.Drawing.Size(120, 32);
             this.xemToolStripMenuItem.Text = "Xem";
             this.xemToolStripMenuItem.Click += new System.EventHandler(this.xemToolStripMenuItem_Click);
             // 
             // sửaToolStripMenuItem
             // 
             this.sửaToolStripMenuItem.Name = "sửaToolStripMenuItem";
-            this.sửaToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.sửaToolStripMenuItem.Size = new System.Drawing.Size(120, 32);
             this.sửaToolStripMenuItem.Text = "Sửa";
             this.sửaToolStripMenuItem.Click += new System.EventHandler(this.sửaToolStripMenuItem_Click);
             // 
             // xóaToolStripMenuItem
             // 
             this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(120, 32);
             this.xóaToolStripMenuItem.Text = "Xóa";
             this.xóaToolStripMenuItem.Click += new System.EventHandler(this.xóaToolStripMenuItem_Click);
             // 

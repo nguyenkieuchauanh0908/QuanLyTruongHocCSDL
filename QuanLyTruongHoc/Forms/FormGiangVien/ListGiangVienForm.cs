@@ -14,6 +14,7 @@ namespace QuanLyTruongHoc.Forms.FormGiangVien
     internal class ListGiangVienForm : BaseListForm
     {
         private System.Windows.Forms.BindingSource giangVienBindingSource;
+
         //private Button add_btn;
         private System.ComponentModel.IContainer components;
         public ListGiangVienForm()
@@ -32,16 +33,20 @@ namespace QuanLyTruongHoc.Forms.FormGiangVien
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(828, 218);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.panel1.Size = new System.Drawing.Size(932, 272);
             // 
             // add_btn
             // 
+            this.add_btn.Location = new System.Drawing.Point(615, 214);
+            this.add_btn.Size = new System.Drawing.Size(98, 30);
             this.add_btn.Click += new System.EventHandler(this.add_btn_Click_1);
             // 
             // ListGiangVienForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.ClientSize = new System.Drawing.Size(828, 450);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.ClientSize = new System.Drawing.Size(932, 562);
+            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "ListGiangVienForm";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.giangVienBindingSource)).EndInit();
