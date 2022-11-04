@@ -55,5 +55,10 @@ namespace QuanLyTruongHoc.Forms
                     break;
             }
         }
+
+        private void button_gv_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
