@@ -177,6 +177,12 @@
     <Compile Include="Forms\FormSinhVien\ListSinhVienForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\FormTrangChu\FormTrangChuSV\FormHomeSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTrangChu\FormTrangChuSV\FormHomeSV.Designer.cs">
+      <DependentUpon>FormHomeSV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,7 @@
     <Compile Include="Helpers\Convert\ConverterHelper.cs" />
     <Compile Include="Helpers\Convert\ConvertToObject.cs" />
     <Compile Include="Helpers\Enum.cs" />
+    <Compile Include="Helpers\Search.cs" />
     <Compile Include="Models\Authentication\LoginSession.cs" />
     <Compile Include="Models\DatabaseModel\ADODangNhap.cs" />
     <Compile Include="Models\DatabaseModel\ADODiem.cs" />
@@ -289,6 +296,9 @@
     <EmbeddedResource Include="Forms\FormSinhVien\ViewSinhVienForm.resx">
       <DependentUpon>ViewSinhVienForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTrangChu\FormTrangChuSV\FormHomeSV.resx">
+      <DependentUpon>FormHomeSV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -323,8 +333,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\FormTrangChu\FormTrangChuSV\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
