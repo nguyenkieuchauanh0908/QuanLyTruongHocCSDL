@@ -48,7 +48,6 @@ namespace QuanLyTruongHoc.Forms
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hệThốngToolStripMenuItem,
@@ -85,9 +84,9 @@ namespace QuanLyTruongHoc.Forms
             // 
             // add_btn
             // 
-            this.add_btn.Location = new System.Drawing.Point(609, 177);
+            this.add_btn.Location = new System.Drawing.Point(612, 211);
             this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(75, 23);
+            this.add_btn.Size = new System.Drawing.Size(75, 33);
             this.add_btn.TabIndex = 1;
             this.add_btn.Text = "Thêm";
             this.add_btn.UseVisualStyleBackColor = true;
@@ -129,15 +128,13 @@ namespace QuanLyTruongHoc.Forms
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.xemToolStripMenuItem,
             this.sửaToolStripMenuItem,
-            this.xóaToolStripMenuItem,
-            });
+            this.xóaToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(121, 100);
             // 
             // xemToolStripMenuItem
             // 
             this.xemToolStripMenuItem.Name = "xemToolStripMenuItem";
-
             this.xemToolStripMenuItem.Size = new System.Drawing.Size(120, 32);
             this.xemToolStripMenuItem.Text = "Xem";
             this.xemToolStripMenuItem.Click += new System.EventHandler(this.xemToolStripMenuItem_Click);
@@ -145,18 +142,14 @@ namespace QuanLyTruongHoc.Forms
             // sửaToolStripMenuItem
             // 
             this.sửaToolStripMenuItem.Name = "sửaToolStripMenuItem";
-
             this.sửaToolStripMenuItem.Size = new System.Drawing.Size(120, 32);
-
             this.sửaToolStripMenuItem.Text = "Sửa";
             this.sửaToolStripMenuItem.Click += new System.EventHandler(this.sửaToolStripMenuItem_Click);
             // 
             // xóaToolStripMenuItem
             // 
             this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-
             this.xóaToolStripMenuItem.Size = new System.Drawing.Size(120, 32);
-
             this.xóaToolStripMenuItem.Text = "Xóa";
             this.xóaToolStripMenuItem.Click += new System.EventHandler(this.xóaToolStripMenuItem_Click);
             // 

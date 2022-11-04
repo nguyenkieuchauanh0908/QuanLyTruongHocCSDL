@@ -17,9 +17,10 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
         public UpdateSinhVienForm(SinhVien sv) : base(sv)
         {
             
-            SinhVien newSv = ConverterHelper.ConvertDataRow<SinhVien>(MainForm.Manager.SinhVien.Get(sv).Rows[0]);
+            //SinhVien newSv = ConverterHelper.ConvertDataRow<SinhVien>(MainForm.Manager.SinhVien.Get(sv).Rows[0]);
             InitializeComponent();
-            this.LoadDataFromObject(newSv);
+            //this.LoadDataFromObject(newSv);
+            this.LoadDataFromObject(sv);
         }
 
         public UpdateSinhVienForm() : base()
