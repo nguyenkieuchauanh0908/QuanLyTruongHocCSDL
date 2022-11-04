@@ -75,5 +75,21 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
             parameters[4] = new SqlParameter("@da_xoa", (obj as LopHoc).DaXoa);
             return adoOperator.ExecuteNonQuery(query, parameters);
         }
+
+        public DataTable LoadLopHocWithMonId(int id)
+        {
+            string query = "select * from LopHoc where ma_mon_hoc = @ma_mon_hoc and dbo.DemSoLuongSV(ma_lop_hoc) < 50";
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = new SqlParameter("@ma_mon_hoc", id);
+            return adoOperator.ExecuteQuery(query, parameters);
+        }
+
+        public DataTable LoadLopHocWithSVId(int id)
+        {
+            string query = "select ma_lop_hoc, ten_mon_hoc, ma_ky_hoc from CACLOPHOCTHAMGIA where id = @ma_sinh_vien";
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = new SqlParameter("@ma_sinh_vien", id);
+            return adoOperator.ExecuteQuery(query, parameters);
+        }
     }
 }

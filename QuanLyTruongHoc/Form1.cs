@@ -23,6 +23,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyTruongHoc.Forms.FormChucNangGV;
+using QuanLyTruongHoc.Forms.FormTrangChu.FormTrangChuSV;
 
 namespace QuanLyTruongHoc
 {
@@ -45,30 +46,8 @@ namespace QuanLyTruongHoc
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ListLopHocForm listLopHocForm = new ListLopHocForm();
-            //listLopHocForm.Show();
-
-            ViewLopHocForm viewLopHocForm = new ViewLopHocForm();
-            //viewLopHocForm.Show();
-
-            ViewSinhVienForm viewSinhVienForm = new ViewSinhVienForm();
-            //viewSinhVienForm.Show();
-
-            AddLopHocForm addLopHocForm = new AddLopHocForm();
-            //addLopHocForm.Show();
-
-            ListMonHocForm listMonHocForm = new ListMonHocForm();
-            //listMonHocForm.Show();
-
-            AddMonHocForm addMonHocForm = new AddMonHocForm();
-            //addMonHocForm.Show();
-
-            ListSinhVienForm listSinhVienForm = new ListSinhVienForm();
-            listSinhVienForm.Show();
-            ListGiangVienForm listGiangVienForm = new ListGiangVienForm();
-            //listGiangVienForm.Show();
-            ListDiemForm listDiemForm = new ListDiemForm();
-            //listDiemForm.Show();
+            CacLopHocDaThamGia form = new CacLopHocDaThamGia();
+            form.Show();
         }
 
         private void sign_in_btn_Click(object sender, EventArgs e)
@@ -94,11 +73,17 @@ namespace QuanLyTruongHoc
             if (Manager.CheckDangNhap(login))
             {
                 MessageBox.Show("Đăng nhập thành công");
-                if(login.vaiTro == VAITRO.GIANGVIEN)
+                switch (role)
                 {
-                    ListDanhSachLop listDanhSachLop = new ListDanhSachLop(login);
-                    listDanhSachLop.Show();
-                }    
+                    case VAITRO.SINHVIEN:
+                        FormHomeSV formHomeSV = new FormHomeSV();
+                        formHomeSV.Show();
+                        break;
+                    case VAITRO.GIANGVIEN:
+                        ListDanhSachLop listDanhSachLop = new ListDanhSachLop(login);
+                        listDanhSachLop.Show();
+                        break;
+                }
                 //HomeForm home = new HomeForm();
                 //home.Show();
                 

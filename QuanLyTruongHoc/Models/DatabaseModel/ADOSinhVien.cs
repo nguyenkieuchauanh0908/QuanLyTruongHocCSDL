@@ -88,5 +88,12 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
         {
             throw new NotImplementedException();
         }
+
+        //public DataTable ListCacLopHocDaThamGia(SinhVien sv)
+        //{
+        //    //......
+        //    // Lam logic de goi csdl tim cac lop hoc ma sv nay da tham
+        //    //return
+        //}
     }
 }

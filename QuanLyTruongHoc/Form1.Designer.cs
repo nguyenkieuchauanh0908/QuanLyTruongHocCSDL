@@ -40,7 +40,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.sign_in_btn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.sign_in_role.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -240,7 +239,6 @@
         private System.Windows.Forms.TextBox input_password;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button sign_in_btn;
     }
 }

@@ -143,6 +143,18 @@
     <Compile Include="Forms\FormLopHoc\AddLopHocForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\FormLopHoc\CacLopHocDaThamGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLopHoc\CacLopHocDaThamGia.Designer.cs">
+      <DependentUpon>CacLopHocDaThamGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLopHoc\ListLopHocCoTheDK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLopHoc\ListLopHocCoTheDK.Designer.cs">
+      <DependentUpon>ListLopHocCoTheDK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormLopHoc\ListLopHocForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +163,12 @@
     </Compile>
     <Compile Include="Forms\FormMonHoc\AddMonHocForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMonHoc\DangKyMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMonHoc\DangKyMonHoc.Designer.cs">
+      <DependentUpon>DangKyMonHoc.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormMonHoc\ListMonHocForm.cs">
       <SubType>Form</SubType>
@@ -258,6 +276,12 @@
     <EmbeddedResource Include="Forms\FormLopHoc\AddLopHocForm.resx">
       <DependentUpon>AddLopHocForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLopHoc\CacLopHocDaThamGia.resx">
+      <DependentUpon>CacLopHocDaThamGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLopHoc\ListLopHocCoTheDK.resx">
+      <DependentUpon>ListLopHocCoTheDK.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormLopHoc\ListLopHocForm.resx">
       <DependentUpon>ListLopHocForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMonHoc\AddMonHocForm.resx">
       <DependentUpon>AddMonHocForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMonHoc\DangKyMonHoc.resx">
+      <DependentUpon>DangKyMonHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMonHoc\ListMonHocForm.resx">
       <DependentUpon>ListMonHocForm.cs</DependentUpon>
@@ -322,7 +349,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms\FormTrangChu\" />
+    <Folder Include="Forms\FormTrangChu\FormTrangChuSV\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
