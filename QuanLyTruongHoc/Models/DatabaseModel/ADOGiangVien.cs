@@ -18,7 +18,7 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
         }
         public DataTable Load()
         {
-            string query = "execute getAllGV";
+            string query = "select * from dbo.getAllGV()";
             return adoOperator.ExecuteQuery(query);
         }
         public bool Add<T>(T obj) where T : IObject
@@ -74,6 +74,40 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
             parameters[7] = new SqlParameter("@ngaySinh", (obj as GiangVien).NgaySinh);
             parameters[8] = new SqlParameter("@tinhTrang", (obj as GiangVien).TinhTrang);
 
+            return adoOperator.ExecuteProcedure(query, parameters);
+        }
+        //Chức năng của giảng viên
+        public DataTable GetDanhSachLop<T>(T obj) where T : IObject
+        {
+            string query = "select * from dbo.getAllLop_GV(@id_gv)";
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = new SqlParameter("@id_gv", (obj as Login).id);
+            return adoOperator.ExecuteQuery(query, parameters);
+        }
+
+        public DataTable GetDanhSachSV<T>(T obj) where T : IObject
+        {
+            string query = "select * from getAllSV_Lop(@id_lop)";
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = new SqlParameter("@id_lop", (obj as ThongTinLopHoc).maLop);
+            return adoOperator.ExecuteQuery(query, parameters);
+        }
+
+        public bool KetThucLop<T>(T obj) where T : IObject
+        {
+            string query = "dbo.KetThucLop";
+            SqlParameter[] parameters = new SqlParameter[1];
+            parameters[0] = new SqlParameter("@maLop", (obj as ThongTinLopHoc).maLop);
+            return adoOperator.ExecuteProcedure(query, parameters);
+        }
+        public bool ChamDiem<T>(T obj) where T : IObject
+        {
+            string query = "dbo.Update_Diem";
+            SqlParameter[] parameters = new SqlParameter[4];
+            parameters[0] = new SqlParameter("@maLop", (obj as DanhSachLop).maLop);
+            parameters[1] = new SqlParameter("@maSV", (obj as DanhSachLop).maSV);
+            parameters[2] = new SqlParameter("@diem_giua_ky", (obj as DanhSachLop).diemGK);
+            parameters[3] = new SqlParameter("@diem_cuoi_ky", (obj as DanhSachLop).diemCK);
             return adoOperator.ExecuteProcedure(query, parameters);
         }
     }

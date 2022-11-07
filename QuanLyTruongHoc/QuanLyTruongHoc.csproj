@@ -53,6 +53,7 @@
     </ItemGroup>
   </Target>
   <ItemGroup>
+    <Compile Include="DataObjects\DanhSachLop.cs" />
     <Compile Include="DataObjects\Diem.cs" />
     <Compile Include="DataObjects\GiangVien.cs" />
     <Compile Include="DataObjects\IObject.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="DataObjects\MonHoc.cs" />
     <Compile Include="DataObjects\QuanTriVien.cs" />
     <Compile Include="DataObjects\SinhVien.cs" />
+    <Compile Include="DataObjects\ThongTinLopHoc.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +83,12 @@
     <Compile Include="Forms\DetailInfoForm.Designer.cs">
       <DependentUpon>DetailInfoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormChucNangGV\FormChamDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormChucNangGV\ListDanhSachSv.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FormDiem\AddDiemForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +99,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormGiangVien\AddGiangVienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormChucNangGV\ListDanhSachLop.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormGiangVien\ListGiangVienForm.cs">
@@ -132,6 +143,18 @@
     <Compile Include="Forms\FormLopHoc\AddLopHocForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\FormLopHoc\CacLopHocDaThamGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLopHoc\CacLopHocDaThamGia.Designer.cs">
+      <DependentUpon>CacLopHocDaThamGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLopHoc\ListLopHocCoTheDK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLopHoc\ListLopHocCoTheDK.Designer.cs">
+      <DependentUpon>ListLopHocCoTheDK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormLopHoc\ListLopHocForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +163,12 @@
     </Compile>
     <Compile Include="Forms\FormMonHoc\AddMonHocForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMonHoc\DangKyMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMonHoc\DangKyMonHoc.Designer.cs">
+      <DependentUpon>DangKyMonHoc.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormMonHoc\ListMonHocForm.cs">
       <SubType>Form</SubType>
@@ -159,6 +188,12 @@
     <Compile Include="Forms\FormSinhVien\ListSinhVienForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\FormTrangChu\FormTrangChuSV\FormHomeSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTrangChu\FormTrangChuSV\FormHomeSV.Designer.cs">
+      <DependentUpon>FormHomeSV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +204,7 @@
     <Compile Include="Helpers\Convert\ConverterHelper.cs" />
     <Compile Include="Helpers\Convert\ConvertToObject.cs" />
     <Compile Include="Helpers\Enum.cs" />
+    <Compile Include="Helpers\Search.cs" />
     <Compile Include="Models\Authentication\LoginSession.cs" />
     <Compile Include="Models\DatabaseModel\ADODangNhap.cs" />
     <Compile Include="Models\DatabaseModel\ADODiem.cs" />
@@ -193,6 +229,12 @@
     <EmbeddedResource Include="Forms\DetailInfoForm.resx">
       <DependentUpon>DetailInfoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormChucNangGV\FormChamDiem.resx">
+      <DependentUpon>FormChamDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormChucNangGV\ListDanhSachSv.resx">
+      <DependentUpon>ListDanhSachSv.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDiem\AddDiemForm.resx">
       <DependentUpon>AddDiemForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +246,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGiangVien\AddGiangVienForm.resx">
       <DependentUpon>AddGiangVienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormChucNangGV\ListDanhSachLop.resx">
+      <DependentUpon>ListDanhSachLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGiangVien\ListGiangVienForm.resx">
+      <DependentUpon>ListGiangVienForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGiangVien\ViewGiangVienForm.resx">
       <DependentUpon>ViewGiangVienForm.cs</DependentUpon>
@@ -235,6 +283,12 @@
     <EmbeddedResource Include="Forms\FormLopHoc\AddLopHocForm.resx">
       <DependentUpon>AddLopHocForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLopHoc\CacLopHocDaThamGia.resx">
+      <DependentUpon>CacLopHocDaThamGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLopHoc\ListLopHocCoTheDK.resx">
+      <DependentUpon>ListLopHocCoTheDK.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormLopHoc\ListLopHocForm.resx">
       <DependentUpon>ListLopHocForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMonHoc\AddMonHocForm.resx">
       <DependentUpon>AddMonHocForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMonHoc\DangKyMonHoc.resx">
+      <DependentUpon>DangKyMonHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMonHoc\ListMonHocForm.resx">
       <DependentUpon>ListMonHocForm.cs</DependentUpon>
@@ -262,6 +319,9 @@
     <EmbeddedResource Include="Forms\FormSinhVien\ViewSinhVienForm.resx">
       <DependentUpon>ViewSinhVienForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTrangChu\FormTrangChuSV\FormHomeSV.resx">
+      <DependentUpon>FormHomeSV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,6 +336,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.DanhSachLop.datasource" />
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.Khoa.datasource" />
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.KyHoc.datasource" />
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.Diem.datasource" />
@@ -283,6 +344,7 @@
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.LopHoc.datasource" />
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.MonHoc.datasource" />
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.SinhVien.datasource" />
+    <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.ThongTinLopHoc.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -296,8 +358,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\FormTrangChu\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

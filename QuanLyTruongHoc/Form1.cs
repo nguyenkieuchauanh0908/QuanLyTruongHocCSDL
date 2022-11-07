@@ -22,6 +22,8 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyTruongHoc.Forms.FormChucNangGV;
+using QuanLyTruongHoc.Forms.FormTrangChu.FormTrangChuSV;
 
 namespace QuanLyTruongHoc
 {
@@ -33,7 +35,7 @@ namespace QuanLyTruongHoc
         public static ADOManager Manager { get => adoManager;}
 
         //string connectionString = @"Data Source=DESKTOP-7IT3958;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True";
-        string connectionString = @"Data Source=DESKTOP-7CJHVGV\SQLEXPRESS;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        string connectionString = @"Data Source=.\SQLEXPRESS01;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True";
 
 
         public MainForm()
@@ -44,6 +46,8 @@ namespace QuanLyTruongHoc
 
         private void button1_Click(object sender, EventArgs e)
         {
+            CacLopHocDaThamGia form = new CacLopHocDaThamGia();
+            form.Show();
             //ListLopHocForm listLopHocForm = new ListLopHocForm();
             ////listLopHocForm.Show();
 
@@ -70,6 +74,8 @@ namespace QuanLyTruongHoc
 
         private void sign_in_btn_Click(object sender, EventArgs e)
         {
+            
+
             string username = input_username.Text;
             string password = input_password.Text;
             VAITRO role = VAITRO.GIANGVIEN;
@@ -91,8 +97,20 @@ namespace QuanLyTruongHoc
             if (Manager.CheckDangNhap(login))
             {
                 MessageBox.Show("Đăng nhập thành công");
-                HomeForm home = new HomeForm();
-                home.Show();
+                switch (role)
+                {
+                    case VAITRO.SINHVIEN:
+                        FormHomeSV formHomeSV = new FormHomeSV();
+                        formHomeSV.Show();
+                        break;
+                    case VAITRO.GIANGVIEN:
+                        ListDanhSachLop listDanhSachLop = new ListDanhSachLop(login);
+                        listDanhSachLop.Show();
+                        break;
+                }
+                //HomeForm home = new HomeForm();
+                //home.Show();
+                
             }
             else
             {

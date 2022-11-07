@@ -10,7 +10,7 @@ namespace QuanLyTruongHoc.DataObjects
         [DataName("id")]
         [DisplayName("Mã sinh viên")]
         [Required]
-        public int MaSV { get; set; }
+        public int? MaSV { get; set; }
 
         [DataName("ten")]
         [DisplayName("Tên")]
@@ -42,7 +42,7 @@ namespace QuanLyTruongHoc.DataObjects
         [DataName("ngay_sinh")]
         [Required]
         [DisplayName("Ngày sinh")]
-        public DateTime NgaySinh { get; set; }
+        public DateTime? NgaySinh { get; set; }
 
         [DataName("tinh_trang")]
         [Required]
@@ -52,7 +52,7 @@ namespace QuanLyTruongHoc.DataObjects
         [DataName("ma_khoa")]
         [Required]
         [DisplayName("Mã khoa")]
-        public int MaKhoa { get; set; }
+        public int? MaKhoa { get; set; }
 
         public override string ToString()
         {
