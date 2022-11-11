@@ -35,41 +35,13 @@ namespace QuanLyTruongHoc
         public static ADOManager Manager { get => adoManager;}
 
         //string connectionString = @"Data Source=DESKTOP-7IT3958;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True";
-        string connectionString = @"Data Source=.\SQLEXPRESS01;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True";
-
+        //string connectionString = @"Data Source=.\SQLEXPRESS01;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True";
+        string connectionString = @"Data Source=DESKTOP-7CJHVGV\SQLEXPRESS;Initial Catalog=QUANLYTRUONGHOC;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         public MainForm()
         {
             InitializeComponent();
             adoManager = new ADOManager(connectionString);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            CacLopHocDaThamGia form = new CacLopHocDaThamGia();
-            form.Show();
-            //ListLopHocForm listLopHocForm = new ListLopHocForm();
-            ////listLopHocForm.Show();
-
-            //ViewLopHocForm viewLopHocForm = new ViewLopHocForm();
-            ////viewLopHocForm.Show();
-
-            //ViewSinhVienForm viewSinhVienForm = new ViewSinhVienForm();
-            ////viewSinhVienForm.Show();
-
-            //AddLopHocForm addLopHocForm = new AddLopHocForm();
-            ////addLopHocForm.Show();
-
-            //ListMonHocForm listMonHocForm = new ListMonHocForm();
-            ////listMonHocForm.Show();
-
-            //AddMonHocForm addMonHocForm = new AddMonHocForm();
-            ////addMonHocForm.Show();
-
-            //ListSinhVienForm listSinhVienForm = new ListSinhVienForm();
-            //ListGiangVienForm listGiangVienForm = new ListGiangVienForm();
-            ListDiemForm listDiemForm = new ListDiemForm();
-            listDiemForm.Show();
         }
 
         private void sign_in_btn_Click(object sender, EventArgs e)
@@ -116,6 +88,25 @@ namespace QuanLyTruongHoc
             {
                 MessageBox.Show("Đăng nhập thất bại");
             }
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //ListSinhVienForm listSinhVienForm = new ListSinhVienForm();
+            //listSinhVienForm.Show();
+            //ListDiemForm listDiemForm = new ListDiemForm();
+            //listDiemForm.Show();
+
+            ListGiangVienForm listGiangVienForm = new ListGiangVienForm();
+            listGiangVienForm.Show();
+            //ListDiemForm listDiemForm = new ListDiemForm();
+            //listDiemForm.Show();
+
         }
     }
 }

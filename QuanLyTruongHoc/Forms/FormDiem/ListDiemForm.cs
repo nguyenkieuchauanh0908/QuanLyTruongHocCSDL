@@ -1,17 +1,20 @@
 ﻿using QuanLyTruongHoc.DataObjects;
+using QuanLyTruongHoc.Helpers;
 using QuanLyTruongHoc.Helpers.Convert;
 using QuanLyTruongHoc.Models.DatabaseModel;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyTruongHoc.Helpers;
 
 namespace QuanLyTruongHoc.Forms.FormDiem
 {
-    internal class ListDiemForm : BaseListForm
+    internal class ListDiemForm : BaseListForm<Diem>
     {
         private System.Windows.Forms.BindingSource diemBindingSource;
         private BindingSource diemBindingSource1;
@@ -19,7 +22,17 @@ namespace QuanLyTruongHoc.Forms.FormDiem
         public ListDiemForm()
         {
             InitializeComponent();
+            
+            //diemBindingSource.DataSource = new Diem();
+            //switch (MainForm.Manager.VaiTroHienTai())
+            //{
+            //    case VAITRO.ADMIN:
             dataGridView.DataSource = MainForm.Manager.Diem.Load();
+            //        break;
+            //    case VAITRO.GIANGVIEN:
+            //dataGridView.DataSource = MainForm.Manager.SinhVien
+            //        break;
+            //}
         }
 
         private void InitializeComponent()
@@ -32,16 +45,18 @@ namespace QuanLyTruongHoc.Forms.FormDiem
             // 
             // panel1
             // 
-            this.panel1.Size = new System.Drawing.Size(800, 52);
+            this.panel1.Size = new System.Drawing.Size(800, 59);
             // 
             // search_btn
             // 
-            this.search_btn.Location = new System.Drawing.Point(698, 13);
-            this.search_btn.Size = new System.Drawing.Size(90, 23);
+            this.search_btn.Location = new System.Drawing.Point(672, 13);
+            this.search_btn.Size = new System.Drawing.Size(116, 33);
+            this.search_btn.Click += new System.EventHandler(this.search_btn_Click_1);
             // 
             // add_btn
             // 
-            this.add_btn.Location = new System.Drawing.Point(617, 13);
+            this.add_btn.Location = new System.Drawing.Point(566, 13);
+            this.add_btn.Size = new System.Drawing.Size(100, 33);
             this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
             // diemBindingSource1
@@ -123,6 +138,22 @@ namespace QuanLyTruongHoc.Forms.FormDiem
         {
             AddDiemForm addDiemForm = new AddDiemForm();
             addDiemForm.Show();
+        }
+
+        private void search_btn_Click_1(object sender, EventArgs e)
+        {
+            // convert datagridview to list<sinhvien>
+            //List<Diem> diems = new List<Diem>();
+
+            //foreach (DataGridViewRow row in dataGridView.Rows)
+            //{
+            //    Diem diem = ConverterHelper.ConvertDataRow<Diem>(((DataRowView)row.DataBoundItem).Row);
+            //    diems.Add(diem);
+            //}
+            //// search
+            //Diem diemSearch = diemBindingSource.Current as Diem;
+            //List<Diem> result = Helpers.Search.SearchBy<Diem>(diems, diemSearch);
+            //dataGridView.DataSource = result;
         }
     }
 }

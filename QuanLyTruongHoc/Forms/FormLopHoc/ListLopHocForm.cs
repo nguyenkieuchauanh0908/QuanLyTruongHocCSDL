@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace QuanLyTruongHoc.Forms.FormLopHoc
 {
-    internal class ListLopHocForm : BaseListForm
+    internal class ListLopHocForm : BaseListForm<LopHoc>
     {
         private System.Windows.Forms.BindingSource lopHocBindingSource;
         private System.ComponentModel.IContainer components;

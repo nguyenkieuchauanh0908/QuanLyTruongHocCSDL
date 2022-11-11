@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace QuanLyTruongHoc.Forms.FormMonHoc
 {
-     internal class ListMonHocForm : BaseListForm
+     internal class ListMonHocForm : BaseListForm<MonHoc>
     {
         private BindingSource monHocBindingSource;
         private System.ComponentModel.IContainer components;

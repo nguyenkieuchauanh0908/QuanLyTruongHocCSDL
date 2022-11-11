@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace QuanLyTruongHoc.Forms.FormKhoa
 {
-    internal class ListKhoaForm : BaseListForm
+    internal class ListKhoaForm : BaseListForm<Khoa>
     {
         private BindingSource khoaBindingSource;
         private System.ComponentModel.IContainer components;

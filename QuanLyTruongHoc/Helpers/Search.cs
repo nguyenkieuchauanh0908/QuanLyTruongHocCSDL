@@ -1,6 +1,8 @@
 ﻿using QuanLyTruongHoc.DataObjects;
+using QuanLyTruongHoc.Helpers.Convert;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,9 +12,17 @@ namespace QuanLyTruongHoc.Helpers
 {
     internal class Search
     {
-        public static List<T> SearchBy<T>(List<T> list,T objSearch) where T : IObject
+        public static DataTable SearchBy<T>(DataTable table,T objSearch)
         {
+            List<T> list = new List<T>();
+            foreach (DataRow row in table.Rows)
+            {
+                T item = ConverterHelper.ConvertDataRow<T>(row);
+                list.Add(item);
+            }
+
             List<T> result = new List<T>();
+
             foreach (var item in list)
             {
                 bool check = true;
@@ -26,7 +36,6 @@ namespace QuanLyTruongHoc.Helpers
                             check = false;
                             break;
                         }
-
                     }
                 }
                 if(check)
@@ -34,7 +43,7 @@ namespace QuanLyTruongHoc.Helpers
                     result.Add(item);
                 }
             }
-            return result;
+            return ConverterHelper.ConvertListToDataTable<T>(result, table.Clone());
         }
     }
 }

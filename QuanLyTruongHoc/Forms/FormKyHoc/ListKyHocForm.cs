@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace QuanLyTruongHoc.Forms.FormKyHoc
 {
-    internal class ListKyHocForm : BaseListForm
+    internal class ListKyHocForm : BaseListForm<KyHoc>
     {
         private BindingSource kyHocBindingSource;
         private System.ComponentModel.IContainer components;

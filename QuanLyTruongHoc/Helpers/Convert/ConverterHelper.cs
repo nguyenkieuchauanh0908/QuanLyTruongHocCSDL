@@ -13,7 +13,7 @@ namespace QuanLyTruongHoc.Helpers.Convert
 {
     internal class ConverterHelper
     {
-        public static T ConvertDataRow<T>(DataRow row) where T : IObject
+        public static T ConvertDataRow<T>(DataRow row)
         {
             T item = GetItem<T>(row);
             return item;
@@ -38,6 +38,31 @@ namespace QuanLyTruongHoc.Helpers.Convert
                 }
             }
             return obj;
+        }
+
+        public static DataTable ConvertListToDataTable<T>(List<T> list, DataTable table)
+        {
+            DataTable result = table;
+            foreach (var item in list)
+            {
+                DataRow row = result.NewRow();
+                
+                foreach (var property in item.GetType().GetProperties())
+                {
+
+                    if (property.GetCustomAttributes<DataNameAttribute>(false).FirstOrDefault() != null)
+                    {
+                        string columnName = property.GetCustomAttributes<DataNameAttribute>(false).FirstOrDefault().ValueNames[0];
+                        row[columnName] = property.GetValue(item);
+                    }
+                    else
+                    {
+                        row[property.Name] = property.GetValue(item);
+                    }
+                }
+                result.Rows.Add(row);
+            }
+            return result;
         }
     }
 }

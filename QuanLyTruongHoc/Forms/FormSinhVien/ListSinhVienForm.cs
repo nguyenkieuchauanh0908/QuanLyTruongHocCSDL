@@ -14,7 +14,7 @@ using QuanLyTruongHoc.Helpers;
 
 namespace QuanLyTruongHoc.Forms.FormSinhVien
 {
-    internal class ListSinhVienForm : BaseListForm
+    internal class ListSinhVienForm : BaseListForm<SinhVien>
     {
         private System.Windows.Forms.BindingSource sinhVienBindingSource;
         private BindingSource khoaBindingSource;
@@ -27,7 +27,6 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
         private DateTimePicker ngaySinhDateTimePicker;
         private TextBox tenTextBox;
         private TextBox tinhTrangTextBox;
-        private DataGridView sinhVienDataGridView;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -38,19 +37,16 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.ComponentModel.IContainer components;
-        public ListSinhVienForm()
+        public ListSinhVienForm() : base()
         {
             InitializeComponent();
             sinhVienBindingSource.DataSource = new SinhVien();
-            switch (MainForm.Manager.VaiTroHienTai())
-            {
-                case VAITRO.ADMIN:
-                    dataGridView.DataSource = MainForm.Manager.SinhVien.Load();
-                    break;
-                case VAITRO.GIANGVIEN:
-                    //dataGridView.DataSource = MainForm.Manager.SinhVien
-                    break;
-            }
+        }
+
+
+        public override DataTable GetTable()
+        {
+            return MainForm.Manager.SinhVien.Load();
         }
 
         private void InitializeComponent()
@@ -76,7 +72,6 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             this.ngaySinhDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.tenTextBox = new System.Windows.Forms.TextBox();
             this.tinhTrangTextBox = new System.Windows.Forms.TextBox();
-            this.sinhVienDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,12 +93,10 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sinhVienBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khoaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sinhVienDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.sinhVienDataGridView);
             this.panel1.Controls.Add(diaChiLabel);
             this.panel1.Controls.Add(this.diaChiTextBox);
             this.panel1.Controls.Add(emailLabel);
@@ -144,23 +137,22 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             this.panel1.Controls.SetChildIndex(emailLabel, 0);
             this.panel1.Controls.SetChildIndex(this.diaChiTextBox, 0);
             this.panel1.Controls.SetChildIndex(diaChiLabel, 0);
-            this.panel1.Controls.SetChildIndex(this.sinhVienDataGridView, 0);
             // 
             // search_btn
             // 
             this.search_btn.Location = new System.Drawing.Point(237, 288);
-            this.search_btn.Click += new System.EventHandler(this.search_btn_Click_1);
             // 
             // add_btn
             // 
-            this.add_btn.Location = new System.Drawing.Point(164, 288);
+            this.add_btn.Location = new System.Drawing.Point(146, 288);
+            this.add_btn.Size = new System.Drawing.Size(75, 27);
             // 
             // diaChiLabel
             // 
             diaChiLabel.AutoSize = true;
             diaChiLabel.Location = new System.Drawing.Point(22, 39);
             diaChiLabel.Name = "diaChiLabel";
-            diaChiLabel.Size = new System.Drawing.Size(50, 16);
+            diaChiLabel.Size = new System.Drawing.Size(55, 17);
             diaChiLabel.TabIndex = 2;
             diaChiLabel.Text = "Địa chỉ:";
             // 
@@ -169,7 +161,7 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             emailLabel.AutoSize = true;
             emailLabel.Location = new System.Drawing.Point(22, 67);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(44, 16);
+            emailLabel.Size = new System.Drawing.Size(46, 17);
             emailLabel.TabIndex = 4;
             emailLabel.Text = "Email:";
             // 
@@ -178,7 +170,7 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             gioiTinhLabel.AutoSize = true;
             gioiTinhLabel.Location = new System.Drawing.Point(22, 95);
             gioiTinhLabel.Name = "gioiTinhLabel";
-            gioiTinhLabel.Size = new System.Drawing.Size(57, 16);
+            gioiTinhLabel.Size = new System.Drawing.Size(64, 17);
             gioiTinhLabel.TabIndex = 6;
             gioiTinhLabel.Text = "Giới tính:";
             // 
@@ -187,7 +179,7 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             hoLabel.AutoSize = true;
             hoLabel.Location = new System.Drawing.Point(22, 123);
             hoLabel.Name = "hoLabel";
-            hoLabel.Size = new System.Drawing.Size(28, 16);
+            hoLabel.Size = new System.Drawing.Size(30, 17);
             hoLabel.TabIndex = 8;
             hoLabel.Text = "Họ:";
             // 
@@ -196,7 +188,7 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             maKhoaLabel.AutoSize = true;
             maKhoaLabel.Location = new System.Drawing.Point(22, 151);
             maKhoaLabel.Name = "maKhoaLabel";
-            maKhoaLabel.Size = new System.Drawing.Size(62, 16);
+            maKhoaLabel.Size = new System.Drawing.Size(66, 17);
             maKhoaLabel.TabIndex = 10;
             maKhoaLabel.Text = "Mã khoa:";
             // 
@@ -205,7 +197,7 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             maSVLabel.AutoSize = true;
             maSVLabel.Location = new System.Drawing.Point(22, 179);
             maSVLabel.Name = "maSVLabel";
-            maSVLabel.Size = new System.Drawing.Size(84, 16);
+            maSVLabel.Size = new System.Drawing.Size(91, 17);
             maSVLabel.TabIndex = 12;
             maSVLabel.Text = "Mã sinh viên:";
             // 
@@ -214,7 +206,7 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             ngaySinhLabel.AutoSize = true;
             ngaySinhLabel.Location = new System.Drawing.Point(22, 208);
             ngaySinhLabel.Name = "ngaySinhLabel";
-            ngaySinhLabel.Size = new System.Drawing.Size(70, 16);
+            ngaySinhLabel.Size = new System.Drawing.Size(75, 17);
             ngaySinhLabel.TabIndex = 14;
             ngaySinhLabel.Text = "Ngày sinh:";
             // 
@@ -223,7 +215,7 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             tenLabel.AutoSize = true;
             tenLabel.Location = new System.Drawing.Point(22, 235);
             tenLabel.Name = "tenLabel";
-            tenLabel.Size = new System.Drawing.Size(34, 16);
+            tenLabel.Size = new System.Drawing.Size(37, 17);
             tenLabel.TabIndex = 16;
             tenLabel.Text = "Tên:";
             // 
@@ -232,7 +224,7 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             tinhTrangLabel.AutoSize = true;
             tinhTrangLabel.Location = new System.Drawing.Point(22, 263);
             tinhTrangLabel.Name = "tinhTrangLabel";
-            tinhTrangLabel.Size = new System.Drawing.Size(69, 16);
+            tinhTrangLabel.Size = new System.Drawing.Size(77, 17);
             tinhTrangLabel.TabIndex = 18;
             tinhTrangLabel.Text = "Tình trạng:";
             // 
@@ -318,25 +310,8 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             // 
             // sinhVienDataGridView
             // 
-            this.sinhVienDataGridView.AutoGenerateColumns = false;
-            this.sinhVienDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.sinhVienDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9});
-            this.sinhVienDataGridView.DataSource = this.sinhVienBindingSource;
-            this.sinhVienDataGridView.Location = new System.Drawing.Point(349, 16);
-            this.sinhVienDataGridView.Name = "sinhVienDataGridView";
-            this.sinhVienDataGridView.RowHeadersWidth = 51;
-            this.sinhVienDataGridView.RowTemplate.Height = 24;
-            this.sinhVienDataGridView.Size = new System.Drawing.Size(957, 299);
-            this.sinhVienDataGridView.TabIndex = 20;
+            
+           
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -422,7 +397,6 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sinhVienBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.khoaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sinhVienDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -439,7 +413,7 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             }
             else
             {
-                MessageBox.Show("Khum có sinh viên nào thêm vào");
+                MessageBox.Show("Không có sinh viên nào thêm vào");
             }
         }
 
@@ -488,21 +462,26 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
         {
             base.add_btn_Click(sender, e);
         }
-        private void search_btn_Click_1(object sender, EventArgs e)
-        {
-            // convert datagridview to list<sinhvien>
-            List<SinhVien> sinhViens = new List<SinhVien>();
+        //private void search_btn_Click_1(object sender, EventArgs e)
+        //{
+        //    // convert datagridview to list<sinhvien>
+        //    //List<SinhVien> sinhViens = new List<SinhVien>();
             
-            foreach (DataGridViewRow row in dataGridView.Rows)
-            {
-                SinhVien sv = ConverterHelper.ConvertDataRow<SinhVien>(((DataRowView)row.DataBoundItem).Row);
-                sinhViens.Add(sv);
-            }
-            // search
-            SinhVien svSearch = sinhVienBindingSource.Current as SinhVien;
-            MessageBox.Show(svSearch.ToString());
-            List<SinhVien> result = Helpers.Search.SearchBy<SinhVien>(sinhViens, svSearch);
-            sinhVienDataGridView.DataSource = result;
+        //    //foreach (DataGridViewRow row in dataGridView.Rows)
+        //    //{
+        //    //    SinhVien sv = ConverterHelper.ConvertDataRow<SinhVien>(((DataRowView)row.DataBoundItem).Row);
+        //    //    sinhViens.Add(sv);
+        //    //}
+        //    //// search
+        //    //SinhVien svSearch = sinhVienBindingSource.Current as SinhVien;
+        //    ////MessageBox.Show(svSearch.ToString());
+        //    //List<SinhVien> result = Helpers.Search.SearchBy<SinhVien>(sinhViens, svSearch);
+        //    //sinhVienDataGridView.DataSource = result;
+        //}
+
+        protected override SinhVien SearchObject()
+        {
+            return sinhVienBindingSource.Current as SinhVien;
         }
     }
 }

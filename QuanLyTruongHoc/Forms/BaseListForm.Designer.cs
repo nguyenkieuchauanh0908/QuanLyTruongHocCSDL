@@ -1,6 +1,6 @@
 namespace QuanLyTruongHoc.Forms
 {
-    partial class BaseListForm
+    partial class BaseListForm<T>
     {
         /// <summary>
         /// Required designer variable.

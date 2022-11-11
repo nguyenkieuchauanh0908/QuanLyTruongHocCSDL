@@ -10,7 +10,7 @@ namespace QuanLyTruongHoc.DataObjects
         [DataName("id")]
         [DisplayName("Mã giảng viên")]
         [Required]
-        public int MaGV { get; set; }
+        public int? MaGV { get; set; }
 
         [DataName("ten")]
         [DisplayName("Tên")]
@@ -47,7 +47,7 @@ namespace QuanLyTruongHoc.DataObjects
         [DataName("ngay_sinh")]
         [Required]
         [DisplayName("Ngày sinh")]
-        public DateTime NgaySinh { get; set; }
+        public DateTime? NgaySinh { get; set; }
 
         [DataName("tinh_trang")]
         [Required]

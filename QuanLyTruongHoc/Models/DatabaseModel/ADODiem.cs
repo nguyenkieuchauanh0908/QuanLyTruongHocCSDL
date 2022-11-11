@@ -64,7 +64,6 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
             parameters[1] = new SqlParameter("@maSV", (obj as Diem).maSV);
             parameters[2] = new SqlParameter("@diem_giua_ky", (obj as Diem).diem_giua_ky);
             parameters[3] = new SqlParameter("@diem_cuoi_ky", (obj as Diem).diem_cuoi_ky);
-
             return adoOperator.ExecuteProcedure(query, parameters);
         }
     }

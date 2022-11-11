@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace QuanLyTruongHoc.Forms.FormChucNangGV
 {
-    internal class ListDanhSachLop : BaseListForm
+    internal class ListDanhSachLop : BaseListForm<LopHoc>
     {
         private BindingSource thongTinLopHocBindingSource;
         private System.ComponentModel.IContainer components;

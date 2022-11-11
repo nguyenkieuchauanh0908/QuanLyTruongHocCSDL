@@ -337,6 +337,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.DanhSachLop.datasource" />
+    <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.IObject.datasource" />
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.Khoa.datasource" />
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.KyHoc.datasource" />
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.Diem.datasource" />
