@@ -156,7 +156,8 @@ namespace QuanLyTruongHoc.Forms.FormLopHoc
            
             LopHoc lh = new LopHoc();
             lh.MaGiangVien = int.Parse(maGiangVienTextBox.Text);
-            lh.MaKyHoc = Int16.Parse(maKyHocTextBox.Text);
+            lh.MaKyHoc=byte.Parse(maKyHocTextBox.Text);
+            //lh.MaKyHoc = Int32.Parse(maKyHocTextBox.Text);
             //lh.MaLop = Int32.Parse(maLopTextBox.Text);
             lh.MaMonHoc = Int32.Parse(maMonHocTextBox.Text);
            // lh.DaXoa = daXoaCheckBox.Enabled;

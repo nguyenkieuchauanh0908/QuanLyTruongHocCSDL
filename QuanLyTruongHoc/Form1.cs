@@ -24,6 +24,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyTruongHoc.Forms.FormChucNangGV;
 using QuanLyTruongHoc.Forms.FormTrangChu.FormTrangChuSV;
+using QuanLyTruongHoc.Forms.FormTrangChu.FormTrangChuAdmin;
 
 namespace QuanLyTruongHoc
 {
@@ -79,6 +80,10 @@ namespace QuanLyTruongHoc
                         ListDanhSachLop listDanhSachLop = new ListDanhSachLop(login);
                         listDanhSachLop.Show();
                         break;
+                    case VAITRO.ADMIN:
+                        FormHomeAdmin formHomeAdmin = new FormHomeAdmin();
+                        formHomeAdmin.Show();
+                        break;
                 }
                 //HomeForm home = new HomeForm();
                 //home.Show();
@@ -99,14 +104,21 @@ namespace QuanLyTruongHoc
         {
             //ListSinhVienForm listSinhVienForm = new ListSinhVienForm();
             //listSinhVienForm.Show();
+            //ListLopHocForm listLopHocForm = new ListLopHocForm();
+            //listLopHocForm.Show();
+
+            //ListGiangVienForm listGiangVienForm = new ListGiangVienForm();
+            //listGiangVienForm.Show();
             //ListDiemForm listDiemForm = new ListDiemForm();
             //listDiemForm.Show();
 
-            ListGiangVienForm listGiangVienForm = new ListGiangVienForm();
-            listGiangVienForm.Show();
-            //ListDiemForm listDiemForm = new ListDiemForm();
-            //listDiemForm.Show();
+            //ListMonHocForm listMonHocForm = new ListMonHocForm();
+            //listMonHocForm.Show();
+            //ListKhoaForm listKhoaForm = new ListKhoaForm();
+            //listKhoaForm.Show();
 
+            ListKyHocForm listKyHocForm = new ListKyHocForm();
+            listKyHocForm.Show();
         }
     }
 }

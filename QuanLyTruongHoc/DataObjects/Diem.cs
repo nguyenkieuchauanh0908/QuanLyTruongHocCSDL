@@ -14,22 +14,22 @@ namespace QuanLyTruongHoc.DataObjects
         [Helpers.Attributes.DataName("ma_lop_hoc")]
         [DisplayName("Mã lớp học")]
         [Required]
-        public int maLop { get; set; }
+        public int? maLop { get; set; }
 
         [DataName("ma_sinh_vien")]
         [DisplayName("Mã sinh viên")]
         [Required]
-        public int maSV { get; set; }
+        public int? maSV { get; set; }
 
-        [DataName("diem_giưa_ky")]
+        [DataName("diem_giua_ky")]
         [DisplayName("Điểm giữa kỳ")]
         [Required]
-        public double diem_giua_ky { get; set; }
+        public double? diem_giua_ky { get; set; }
 
         [DataName("diem_cuoi_ky")]
         [DisplayName("Điểm cuối kỳ")]
         [Required]
-        public double diem_cuoi_ky { get; set; }
+        public double? diem_cuoi_ky { get; set; }
 
 
         public override string ToString()

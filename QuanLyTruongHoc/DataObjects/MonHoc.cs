@@ -14,17 +14,17 @@ namespace QuanLyTruongHoc.DataObjects
         [DataName("ma_mon_hoc")]
         [Required]
         [DisplayName("Mã môn học")]
-        public int MaMonHoc { get; set; }
+        public int? MaMonHoc { get; set; }
 
         [DataName("ten_mon_hoc")]
         [Required]
         [DisplayName("Tên môn học")]
         public string TenMonHoc { get; set; }
 
-        [DataName("so_tinh_chi")]
+        [DataName("so_tin_chi")]
         [Required]
         [DisplayName("Số tín chỉ")]
-        public short SoTinhChi { get; set; }
+        public Byte? SoTinhChi { get; set; }
 
         [DataName("da_xoa")]
         [Required]

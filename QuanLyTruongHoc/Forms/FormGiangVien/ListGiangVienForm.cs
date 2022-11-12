@@ -51,7 +51,6 @@ namespace QuanLyTruongHoc.Forms.FormGiangVien
             System.Windows.Forms.Label tenLabel;
             System.Windows.Forms.Label tinhTrangLabel;
             this.giangVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.giangVienBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.diaChiTextBox = new System.Windows.Forms.TextBox();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.gioiTinhComboBox = new System.Windows.Forms.ComboBox();
@@ -61,6 +60,7 @@ namespace QuanLyTruongHoc.Forms.FormGiangVien
             this.soDTTextBox = new System.Windows.Forms.TextBox();
             this.tenTextBox = new System.Windows.Forms.TextBox();
             this.tinhTrangTextBox = new System.Windows.Forms.TextBox();
+            this.giangVienBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             diaChiLabel = new System.Windows.Forms.Label();
             emailLabel = new System.Windows.Forms.Label();
             gioiTinhLabel = new System.Windows.Forms.Label();
@@ -95,6 +95,7 @@ namespace QuanLyTruongHoc.Forms.FormGiangVien
             this.panel1.Controls.Add(this.tenTextBox);
             this.panel1.Controls.Add(tinhTrangLabel);
             this.panel1.Controls.Add(this.tinhTrangTextBox);
+            this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Size = new System.Drawing.Size(828, 302);
             this.panel1.Controls.SetChildIndex(this.search_btn, 0);
@@ -120,13 +121,14 @@ namespace QuanLyTruongHoc.Forms.FormGiangVien
             // 
             // search_btn
             // 
-            this.search_btn.Location = new System.Drawing.Point(462, 249);
+            this.search_btn.Location = new System.Drawing.Point(520, 237);
+            this.search_btn.Size = new System.Drawing.Size(117, 35);
             // 
             // add_btn
             // 
-            this.add_btn.Location = new System.Drawing.Point(369, 252);
+            this.add_btn.Location = new System.Drawing.Point(417, 237);
             this.add_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.add_btn.Size = new System.Drawing.Size(87, 24);
+            this.add_btn.Size = new System.Drawing.Size(87, 35);
             this.add_btn.Click += new System.EventHandler(this.add_btn_Click_1);
             // 
             // diaChiLabel
@@ -210,10 +212,6 @@ namespace QuanLyTruongHoc.Forms.FormGiangVien
             tinhTrangLabel.TabIndex = 18;
             tinhTrangLabel.Text = "Tình trạng:";
             // 
-            // giangVienBindingSource1
-            // 
-            this.giangVienBindingSource1.DataSource = typeof(QuanLyTruongHoc.DataObjects.GiangVien);
-            // 
             // diaChiTextBox
             // 
             this.diaChiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.giangVienBindingSource1, "DiaChi", true));
@@ -287,6 +285,10 @@ namespace QuanLyTruongHoc.Forms.FormGiangVien
             this.tinhTrangTextBox.Name = "tinhTrangTextBox";
             this.tinhTrangTextBox.Size = new System.Drawing.Size(200, 22);
             this.tinhTrangTextBox.TabIndex = 19;
+            // 
+            // giangVienBindingSource1
+            // 
+            this.giangVienBindingSource1.DataSource = typeof(QuanLyTruongHoc.DataObjects.GiangVien);
             // 
             // ListGiangVienForm
             // 
