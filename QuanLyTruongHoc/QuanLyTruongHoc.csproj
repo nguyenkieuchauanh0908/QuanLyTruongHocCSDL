@@ -188,12 +188,6 @@
     <Compile Include="Forms\FormSinhVien\ListSinhVienForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormTrangChu\FormTrangChuAdmin\FormHomeAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormTrangChu\FormTrangChuAdmin\FormHomeAdmin.Designer.cs">
-      <DependentUpon>FormHomeAdmin.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormTrangChu\FormTrangChuSV\FormHomeSV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -325,9 +319,6 @@
     <EmbeddedResource Include="Forms\FormSinhVien\ViewSinhVienForm.resx">
       <DependentUpon>ViewSinhVienForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormTrangChu\FormTrangChuAdmin\FormHomeAdmin.resx">
-      <DependentUpon>FormHomeAdmin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormTrangChu\FormTrangChuSV\FormHomeSV.resx">
       <DependentUpon>FormHomeSV.cs</DependentUpon>
     </EmbeddedResource>
@@ -346,16 +337,14 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.DanhSachLop.datasource" />
-    <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.Diem.datasource" />
-    <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.IObject.datasource" />
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.Khoa.datasource" />
-    <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.GiangVien.datasource" />
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.KyHoc.datasource" />
+    <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.Diem.datasource" />
+    <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.GiangVien.datasource" />
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.LopHoc.datasource" />
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.MonHoc.datasource" />
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.SinhVien.datasource" />
     <None Include="Properties\DataSources\QuanLyTruongHoc.DataObjects.ThongTinLopHoc.datasource" />
-    <None Include="Properties\DataSources\QuanLyTruongHoc.Forms.FormLopHoc.ListLopHocForm.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
