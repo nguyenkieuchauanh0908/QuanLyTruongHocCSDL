@@ -14,22 +14,22 @@ namespace QuanLyTruongHoc.DataObjects
         [DataName("ma_lop_hoc")]
         [Required]
         [DisplayName("Mã lớp học")]
-        public int MaLop { get; set; }
+        public int? MaLop { get; set; }
 
         [DataName("ma_ky_hoc")]
         [Required]
         [DisplayName("Mã kỳ học")]
-        public short MaKyHoc { get; set; }
+        public byte? MaKyHoc { get; set; }
 
         [DataName("ma_mon_hoc")]
         [Required]
         [DisplayName("Mã môn học")]
-        public int MaMonHoc { get; set; }
+        public int? MaMonHoc { get; set; }
 
         [DataName("ma_giang_vien")]
         [Required]
         [DisplayName("Mã giảng viên")]
-        public int MaGiangVien { get; set; }
+        public int? MaGiangVien { get; set; }
 
         [DataName("da_xoa")]
         [Required]

@@ -14,21 +14,21 @@ namespace QuanLyTruongHoc.DataObjects
         [DataName("id_ky_hoc")]
         [DisplayName("Mã Kỳ Học")]
         [Required]
-        public int MaKyHoc { get; set; }
+        public byte? MaKyHoc { get; set; }
 
         [DataName("nam_hoc")]
         [DisplayName("Năm Học")]
         [Required]
-        public int NamHoc { get; set; }
+        public short? NamHoc { get; set; }
 
         [DataName("ky_hoc")]
         [DisplayName("Kỳ Học")]
         [Required]
-        public int kyHoc { get; set; }
+        public byte? kyHoc { get; set; }
 
         [DataName("hoc_phi")]
         [DisplayName("Học Phí")]
         [Required]
-        public decimal HocPhi { get; set; }
+        public decimal? HocPhi { get; set; }
     }
 }

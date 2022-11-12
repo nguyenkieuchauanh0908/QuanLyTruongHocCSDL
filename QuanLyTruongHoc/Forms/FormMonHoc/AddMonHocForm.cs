@@ -109,7 +109,8 @@ namespace QuanLyTruongHoc.Forms.FormMonHoc
             MonHoc mh = new MonHoc();
             //mh.MaMonHoc = int.Parse(maMonHocTextBox.Text);
             //mh.MaMonHoc = convert.toint32(maMonHocTextBox.Text);
-            mh.SoTinhChi = Int16.Parse(soTinhChiTextBox.Text);
+            mh.SoTinhChi = byte.Parse(soTinhChiTextBox.Text);
+            //mh.SoTinhChi = Int16.Parse(soTinhChiTextBox.Text);
             mh.TenMonHoc= tenMonHocTextBox.Text;
            // mh.TinhTrang = tinhTrangCheckBox.Checked;
            

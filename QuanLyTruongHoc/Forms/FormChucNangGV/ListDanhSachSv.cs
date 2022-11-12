@@ -11,7 +11,7 @@ using QuanLyTruongHoc.Helpers.Convert;
 
 namespace QuanLyTruongHoc.Forms.FormChucNangGV
 {
-    internal class ListDanhSachSv : BaseListForm
+    internal class ListDanhSachSv : BaseListForm<SinhVien>
     {
         private BindingSource danhSachLopBindingSource;
         private TextBox textBox1;

@@ -14,7 +14,7 @@ namespace QuanLyTruongHoc.DataObjects
         [DataName("ma_khoa")]
         [DisplayName("Mã Khoa")]
         [Required]
-        public int MaKhoa { get; set; }
+        public int? MaKhoa { get; set; }
 
         [DataName("ten_khoa")]
         [DisplayName("Tên Khoa")]

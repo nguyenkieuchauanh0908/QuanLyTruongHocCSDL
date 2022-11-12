@@ -18,32 +18,32 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
         }
         public DataTable Load()
         {
-            string query = "execute dbo.getAllBD";
+            string query = "select * from dbo.GetAllBD()";
             return adoOperator.ExecuteQuery(query);
         }
         public bool Add<T>(T obj) where T : IObject
         {
-            string query = "execute addDiem @maLop,@maSV,@diem_giua_ky,@diem_cuoi_ky";
+            string query = "dbo.addDiem";
             SqlParameter[] parameters = new SqlParameter[4];
             parameters[0] = new SqlParameter("@maLop", (obj as Diem).maLop);
             parameters[1] = new SqlParameter("@maSV", (obj as Diem).maSV);
             parameters[2] = new SqlParameter("@diem_giua_ky", (obj as Diem).diem_giua_ky);
             parameters[3] = new SqlParameter("@diem_cuoi_ky", (obj as Diem).diem_cuoi_ky);
-            return adoOperator.ExecuteNonQuery(query, parameters);
+            return adoOperator.ExecuteProcedure(query, parameters);
         }
 
         public bool Delete<T>(T obj) where T : IObject
         {
-            string query = "execute deleteDiem @maLop,@maSV";
+            string query = "dbo.deleteDiem";
             SqlParameter[] parameters = new SqlParameter[2];
             parameters[0] = new SqlParameter("@maLop", (obj as Diem).maLop);
             parameters[1] = new SqlParameter("@maSV", (obj as Diem).maSV);
-            return adoOperator.ExecuteNonQuery(query, parameters);
+            return adoOperator.ExecuteProcedure(query, parameters);
         }
 
         public DataTable Get<T>(T obj) where T : IObject
         {
-            string query = "execute getDiemById @maLop,@maSV";
+            string query = "select * from getDiemById()";
             SqlParameter[] parameters = new SqlParameter[2];
             parameters[0] = new SqlParameter("@maLop", (obj as Diem).maLop);
             parameters[1] = new SqlParameter("@maSV", (obj as Diem).maSV);
@@ -58,14 +58,13 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
 
         public bool Update<T>(T obj) where T : IObject
         {
-            string query = "execute updateDiem @maLop,@maSV,@diem_giua_ky,@diem_cuoi_ky";
+            string query = "dbo.Update_Diem";
             SqlParameter[] parameters = new SqlParameter[4];
             parameters[0] = new SqlParameter("@maLop", (obj as Diem).maLop);
             parameters[1] = new SqlParameter("@maSV", (obj as Diem).maSV);
             parameters[2] = new SqlParameter("@diem_giua_ky", (obj as Diem).diem_giua_ky);
             parameters[3] = new SqlParameter("@diem_cuoi_ky", (obj as Diem).diem_cuoi_ky);
-
-            return adoOperator.ExecuteNonQuery(query, parameters);
+            return adoOperator.ExecuteProcedure(query, parameters);
         }
     }
 }

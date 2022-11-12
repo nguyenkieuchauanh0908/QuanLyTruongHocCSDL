@@ -23,7 +23,7 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
         }
         public bool Add<T>(T obj) where T : IObject
         {
-            string query = "execute addGV @ten,@ho,@email,@gioiTinh,@sdt,@diaChi,@ngaySinh,@tinhTrang";
+            string query = "dbo.AddGV";
             SqlParameter[] parameters = new SqlParameter[8];
             //parameters[0] = new SqlParameter("@id", (obj as GiangVien).MaGV);
             parameters[0] = new SqlParameter("@ten", (obj as GiangVien).Ten);
@@ -35,20 +35,20 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
             parameters[6] = new SqlParameter("@ngaySinh", (obj as GiangVien).NgaySinh);
             parameters[7] = new SqlParameter("@tinhTrang", (obj as GiangVien).TinhTrang);
 
-            return adoOperator.ExecuteNonQuery(query, parameters);
+            return adoOperator.ExecuteProcedure(query, parameters);
         }
 
         public bool Delete<T>(T obj) where T : IObject
         {
-            string query = "execute deleteGV @id";
+            string query = "dbo.deleteGV";
             SqlParameter[] parameters = new SqlParameter[1];
             parameters[0] = new SqlParameter("@id", (obj as GiangVien).MaGV);
-            return adoOperator.ExecuteNonQuery(query, parameters);
+            return adoOperator.ExecuteProcedure(query, parameters);
         }
 
         public DataTable Get<T>(T obj) where T : IObject
         {
-            string query = "execute getGVById @id";
+            string query = "select * from getGVById()";
             SqlParameter[] parameters = new SqlParameter[1];
             parameters[0] = new SqlParameter("@id", (obj as GiangVien).MaGV);
             return adoOperator.ExecuteQuery(query, parameters);
@@ -62,7 +62,7 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
 
         public bool Update<T>(T obj) where T : IObject
         {
-            string query = "execute updateGV @id, @ten,@ho,@email,@gioiTinh,@sdt,@diaChi,@ngaySinh,@tinhTrang";
+            string query = "dbo.updateGV";
             SqlParameter[] parameters = new SqlParameter[9];
             parameters[0] = new SqlParameter("@id", (obj as GiangVien).MaGV);
             parameters[1] = new SqlParameter("@ten", (obj as GiangVien).Ten);
@@ -74,7 +74,7 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
             parameters[7] = new SqlParameter("@ngaySinh", (obj as GiangVien).NgaySinh);
             parameters[8] = new SqlParameter("@tinhTrang", (obj as GiangVien).TinhTrang);
 
-            return adoOperator.ExecuteNonQuery(query, parameters);
+            return adoOperator.ExecuteProcedure(query, parameters);
         }
         //Chức năng của giảng viên
         public DataTable GetDanhSachLop<T>(T obj) where T : IObject
