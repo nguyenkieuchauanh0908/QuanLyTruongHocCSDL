@@ -92,6 +92,12 @@
     <Compile Include="Forms\FormDiem\AddDiemForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\FormDiem\FormChuyenLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDiem\FormChuyenLop.Designer.cs">
+      <DependentUpon>FormChuyenLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormDiem\ListDiemForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDiem\AddDiemForm.resx">
       <DependentUpon>AddDiemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDiem\FormChuyenLop.resx">
+      <DependentUpon>FormChuyenLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDiem\ListDiemForm.resx">
       <DependentUpon>ListDiemForm.cs</DependentUpon>

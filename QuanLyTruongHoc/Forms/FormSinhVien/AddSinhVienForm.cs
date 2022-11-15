@@ -23,6 +23,7 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
         public AddSinhVienForm() : base()
         {
             InitializeComponent();
+            this.maSVTextBox.Enabled = false;
         }
 
         private void InitializeComponent()
@@ -33,9 +34,46 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
+            // diaChiTextBox
+            // 
+            this.diaChiTextBox.Location = new System.Drawing.Point(255, 511);
+            // 
+            // emailTextBox
+            // 
+            this.emailTextBox.Location = new System.Drawing.Point(255, 372);
+            // 
+            // gioiTinhTextBox
+            // 
+            this.gioiTinhTextBox.Location = new System.Drawing.Point(255, 274);
+            // 
+            // hoTextBox
+            // 
+            this.hoTextBox.Location = new System.Drawing.Point(255, 227);
+            // 
+            // maKhoaComboBox
+            // 
+            this.maKhoaComboBox.Location = new System.Drawing.Point(255, 420);
+            // 
+            // maSVTextBox
+            // 
+            this.maSVTextBox.Location = new System.Drawing.Point(255, 145);
+            // 
+            // ngaySinhDateTimePicker
+            // 
+            this.ngaySinhDateTimePicker.Location = new System.Drawing.Point(255, 466);
+            // 
+            // tenTextBox
+            // 
+            this.tenTextBox.Location = new System.Drawing.Point(255, 186);
+            // 
+            // tinhTrangComboBox
+            // 
+            this.tinhTrangComboBox.Location = new System.Drawing.Point(255, 322);
+            // 
             // panel1
             // 
             this.panel1.Size = new System.Drawing.Size(615, 637);
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.Controls.SetChildIndex(this.tinhTrangComboBox, 0);
             this.panel1.Controls.SetChildIndex(this.tenTextBox, 0);
             this.panel1.Controls.SetChildIndex(this.ngaySinhDateTimePicker, 0);
@@ -78,6 +116,7 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
         private void add_button_Click(object sender, EventArgs e)
         {
             SinhVien sv = bindingSource.Current as SinhVien; // Chuyển về data object (ngôn ngữ chung để nói chuyện với nhau)
+            //MessageBox.Show(sv.ToString());
             if (sv == null) return;
             ValidationContext context = new ValidationContext(sv, null, null);
             IList<ValidationResult> validationResults = new List<ValidationResult>();
@@ -102,6 +141,11 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             }
         
             
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

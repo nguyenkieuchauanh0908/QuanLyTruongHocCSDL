@@ -30,6 +30,7 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
         public ViewSinhVienForm() : base()
         {
             InitializeComponent();
+            this.bindingSource.DataSource = new SinhVien();
         }
 
         protected override void Init()

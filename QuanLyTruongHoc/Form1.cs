@@ -80,7 +80,7 @@ namespace QuanLyTruongHoc
                     case VAITRO.GIANGVIEN:
                         //FormHomeGV formHomeGV = new FormHomeGV();
                         //formHomeGV.Show();
-                        ListDanhSachLop listDanhSachLop = new ListDanhSachLop(login);
+                        ListDanhSachLop listDanhSachLop = new ListDanhSachLop();
                         listDanhSachLop.Show();
                         break;
                     case VAITRO.ADMIN:

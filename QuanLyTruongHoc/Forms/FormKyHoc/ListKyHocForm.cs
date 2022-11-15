@@ -40,12 +40,12 @@ namespace QuanLyTruongHoc.Forms.FormKyHoc
             System.Windows.Forms.Label kyHocLabel;
             System.Windows.Forms.Label maKyHocLabel;
             System.Windows.Forms.Label namHocLabel;
-            this.kyHocBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.khoaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hocPhiTextBox = new System.Windows.Forms.TextBox();
             this.kyHocTextBox = new System.Windows.Forms.TextBox();
             this.maKyHocTextBox = new System.Windows.Forms.TextBox();
             this.namHocTextBox = new System.Windows.Forms.TextBox();
+            this.kyHocBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.khoaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             hocPhiLabel = new System.Windows.Forms.Label();
             kyHocLabel = new System.Windows.Forms.Label();
             maKyHocLabel = new System.Windows.Forms.Label();
@@ -65,7 +65,9 @@ namespace QuanLyTruongHoc.Forms.FormKyHoc
             this.panel1.Controls.Add(this.maKyHocTextBox);
             this.panel1.Controls.Add(namHocLabel);
             this.panel1.Controls.Add(this.namHocTextBox);
+            this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Size = new System.Drawing.Size(800, 262);
+            this.panel1.Controls.SetChildIndex(this.refresh, 0);
             this.panel1.Controls.SetChildIndex(this.search_btn, 0);
             this.panel1.Controls.SetChildIndex(this.add_btn, 0);
             this.panel1.Controls.SetChildIndex(this.namHocTextBox, 0);
@@ -87,14 +89,6 @@ namespace QuanLyTruongHoc.Forms.FormKyHoc
             this.add_btn.Location = new System.Drawing.Point(323, 125);
             this.add_btn.Size = new System.Drawing.Size(75, 52);
             // 
-            // kyHocBindingSource
-            // 
-            this.kyHocBindingSource.DataSource = typeof(QuanLyTruongHoc.DataObjects.KyHoc);
-            // 
-            // khoaBindingSource
-            // 
-            this.khoaBindingSource.DataSource = typeof(QuanLyTruongHoc.DataObjects.Khoa);
-            // 
             // hocPhiLabel
             // 
             hocPhiLabel.AutoSize = true;
@@ -103,14 +97,6 @@ namespace QuanLyTruongHoc.Forms.FormKyHoc
             hocPhiLabel.Size = new System.Drawing.Size(61, 17);
             hocPhiLabel.TabIndex = 2;
             hocPhiLabel.Text = "Học Phí:";
-            // 
-            // hocPhiTextBox
-            // 
-            this.hocPhiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kyHocBindingSource, "HocPhi", true));
-            this.hocPhiTextBox.Location = new System.Drawing.Point(155, 74);
-            this.hocPhiTextBox.Name = "hocPhiTextBox";
-            this.hocPhiTextBox.Size = new System.Drawing.Size(100, 22);
-            this.hocPhiTextBox.TabIndex = 3;
             // 
             // kyHocLabel
             // 
@@ -121,14 +107,6 @@ namespace QuanLyTruongHoc.Forms.FormKyHoc
             kyHocLabel.TabIndex = 4;
             kyHocLabel.Text = "Kỳ Học:";
             // 
-            // kyHocTextBox
-            // 
-            this.kyHocTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kyHocBindingSource, "kyHoc", true));
-            this.kyHocTextBox.Location = new System.Drawing.Point(155, 102);
-            this.kyHocTextBox.Name = "kyHocTextBox";
-            this.kyHocTextBox.Size = new System.Drawing.Size(100, 22);
-            this.kyHocTextBox.TabIndex = 5;
-            // 
             // maKyHocLabel
             // 
             maKyHocLabel.AutoSize = true;
@@ -137,14 +115,6 @@ namespace QuanLyTruongHoc.Forms.FormKyHoc
             maKyHocLabel.Size = new System.Drawing.Size(80, 17);
             maKyHocLabel.TabIndex = 6;
             maKyHocLabel.Text = "Mã Kỳ Học:";
-            // 
-            // maKyHocTextBox
-            // 
-            this.maKyHocTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kyHocBindingSource, "MaKyHoc", true));
-            this.maKyHocTextBox.Location = new System.Drawing.Point(155, 130);
-            this.maKyHocTextBox.Name = "maKyHocTextBox";
-            this.maKyHocTextBox.Size = new System.Drawing.Size(100, 22);
-            this.maKyHocTextBox.TabIndex = 7;
             // 
             // namHocLabel
             // 
@@ -155,6 +125,30 @@ namespace QuanLyTruongHoc.Forms.FormKyHoc
             namHocLabel.TabIndex = 8;
             namHocLabel.Text = "Năm Học:";
             // 
+            // hocPhiTextBox
+            // 
+            this.hocPhiTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kyHocBindingSource, "HocPhi", true));
+            this.hocPhiTextBox.Location = new System.Drawing.Point(155, 74);
+            this.hocPhiTextBox.Name = "hocPhiTextBox";
+            this.hocPhiTextBox.Size = new System.Drawing.Size(100, 22);
+            this.hocPhiTextBox.TabIndex = 3;
+            // 
+            // kyHocTextBox
+            // 
+            this.kyHocTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kyHocBindingSource, "kyHoc", true));
+            this.kyHocTextBox.Location = new System.Drawing.Point(155, 102);
+            this.kyHocTextBox.Name = "kyHocTextBox";
+            this.kyHocTextBox.Size = new System.Drawing.Size(100, 22);
+            this.kyHocTextBox.TabIndex = 5;
+            // 
+            // maKyHocTextBox
+            // 
+            this.maKyHocTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kyHocBindingSource, "MaKyHoc", true));
+            this.maKyHocTextBox.Location = new System.Drawing.Point(155, 130);
+            this.maKyHocTextBox.Name = "maKyHocTextBox";
+            this.maKyHocTextBox.Size = new System.Drawing.Size(100, 22);
+            this.maKyHocTextBox.TabIndex = 7;
+            // 
             // namHocTextBox
             // 
             this.namHocTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kyHocBindingSource, "NamHoc", true));
@@ -163,12 +157,21 @@ namespace QuanLyTruongHoc.Forms.FormKyHoc
             this.namHocTextBox.Size = new System.Drawing.Size(100, 22);
             this.namHocTextBox.TabIndex = 9;
             // 
+            // kyHocBindingSource
+            // 
+            this.kyHocBindingSource.DataSource = typeof(QuanLyTruongHoc.DataObjects.KyHoc);
+            // 
+            // khoaBindingSource
+            // 
+            this.khoaBindingSource.DataSource = typeof(QuanLyTruongHoc.DataObjects.Khoa);
+            // 
             // ListKyHocForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ListKyHocForm";
+            this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kyHocBindingSource)).EndInit();
@@ -213,6 +216,12 @@ namespace QuanLyTruongHoc.Forms.FormKyHoc
         protected override KyHoc SearchObject()
         {
             return kyHocBindingSource.Current as KyHoc;
+        }
+
+        protected override void search_btn_Click(object sender, EventArgs e)
+        {
+            base.search_btn_Click(sender, e);
+            this.kyHocBindingSource.DataSource = new KyHoc();
         }
     }
 }

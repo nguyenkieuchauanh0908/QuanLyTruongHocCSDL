@@ -16,12 +16,20 @@ namespace QuanLyTruongHoc.Forms.FormChucNangGV
         private BindingSource danhSachLopBindingSource;
         private TextBox textBox1;
         private System.ComponentModel.IContainer components;
+        private ThongTinLopHoc thongTin;
         public ListDanhSachSv(ThongTinLopHoc thongTinLopHoc) : base()
         {
             InitializeComponent();
-            dataGridView.DataSource = MainForm.Manager.GiangVien.GetDanhSachSV(thongTinLopHoc);
+            thongTin = thongTinLopHoc;
+            InitList();
         }
-        
+
+
+        public override DataTable GetTable()
+        {
+            return MainForm.Manager.GiangVien.GetDanhSachSV(thongTin);
+        }
+
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();

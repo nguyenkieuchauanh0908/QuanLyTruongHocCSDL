@@ -281,5 +281,11 @@ namespace QuanLyTruongHoc.Forms.FormLopHoc
         {
 
         }
+
+        protected override void search_btn_Click(object sender, EventArgs e)
+        {
+            base.search_btn_Click(sender, e);
+            this.lopHocBindingSource.DataSource = new LopHoc();
+        }
     }
 }

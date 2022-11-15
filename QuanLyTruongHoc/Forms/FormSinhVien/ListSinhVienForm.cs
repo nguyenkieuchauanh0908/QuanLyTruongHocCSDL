@@ -41,6 +41,7 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
         {
             InitializeComponent();
             sinhVienBindingSource.DataSource = new SinhVien();
+            InitList();
         }
 
 
@@ -141,7 +142,7 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             // search_btn
             // 
             this.search_btn.Location = new System.Drawing.Point(237, 288);
-            this.search_btn.Click += new System.EventHandler(this.search_btn_Click_1);
+            //this.search_btn.Click += new System.EventHandler(this.search_btn_Click_1);
             // 
             // add_btn
             // 
@@ -481,9 +482,10 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             return sinhVienBindingSource.Current as SinhVien;
         }
 
-        private void search_btn_Click_1(object sender, EventArgs e)
+        protected override void search_btn_Click(object sender, EventArgs e)
         {
-
+            base.search_btn_Click(sender, e);
+            this.sinhVienBindingSource.DataSource = new SinhVien();
         }
     }
 }

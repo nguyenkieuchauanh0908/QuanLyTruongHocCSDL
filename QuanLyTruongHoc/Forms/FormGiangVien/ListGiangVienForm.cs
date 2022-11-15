@@ -98,6 +98,7 @@ namespace QuanLyTruongHoc.Forms.FormGiangVien
             this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Size = new System.Drawing.Size(828, 302);
+            this.panel1.Controls.SetChildIndex(this.refresh, 0);
             this.panel1.Controls.SetChildIndex(this.search_btn, 0);
             this.panel1.Controls.SetChildIndex(this.add_btn, 0);
             this.panel1.Controls.SetChildIndex(this.tinhTrangTextBox, 0);
@@ -296,6 +297,7 @@ namespace QuanLyTruongHoc.Forms.FormGiangVien
             this.ClientSize = new System.Drawing.Size(828, 450);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ListGiangVienForm";
+            this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.giangVienBindingSource)).EndInit();
@@ -378,6 +380,12 @@ namespace QuanLyTruongHoc.Forms.FormGiangVien
         private void diaChiTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected override void search_btn_Click(object sender, EventArgs e)
+        {
+            base.search_btn_Click(sender, e);
+            this.giangVienBindingSource1.DataSource = new GiangVien();
         }
     }
 }

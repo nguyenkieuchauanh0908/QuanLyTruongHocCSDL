@@ -208,5 +208,11 @@ namespace QuanLyTruongHoc.Forms.FormKhoa
             AddKhoaForm addKhoaForm = new AddKhoaForm();
             addKhoaForm.Show();
         }
+
+        protected override void search_btn_Click(object sender, EventArgs e)
+        {
+            base.search_btn_Click(sender, e);
+            this.khoaBindingSource.DataSource = new Khoa();
+        }
     }
 }

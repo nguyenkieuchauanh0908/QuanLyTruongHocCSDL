@@ -21,7 +21,6 @@ namespace QuanLyTruongHoc.Forms
         {
             InitializeComponent();
             list = new List<T>();
-            InitList();
         }
 
         public void InitList()
@@ -80,7 +79,16 @@ namespace QuanLyTruongHoc.Forms
         protected virtual void search_btn_Click(object sender, EventArgs e)
         {
             T searchObj = SearchObject();
-           DataTable result = Helpers.Search.SearchBy<T>(table, searchObj);
+            MessageBox.Show(searchObj.ToString());
+            DataTable result;
+            if (searchObj == null)
+            {
+                result = GetTable();
+            }   
+            else
+            {
+                result = Helpers.Search.SearchBy<T>(table, searchObj);
+            }
             dataGridView.DataSource = result;
         }
 
@@ -97,6 +105,11 @@ namespace QuanLyTruongHoc.Forms
         private void iObjectDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void refresh_Click(object sender, EventArgs e)
+        {
+            dataGridView.DataSource = GetTable();
         }
     }
 }

@@ -33,6 +33,7 @@ namespace QuanLyTruongHoc.Forms
             this.hệThốngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.côngCụToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.refresh = new System.Windows.Forms.Button();
             this.add_btn = new System.Windows.Forms.Button();
             this.search_btn = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
@@ -72,13 +73,24 @@ namespace QuanLyTruongHoc.Forms
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.refresh);
             this.panel1.Controls.Add(this.add_btn);
             this.panel1.Controls.Add(this.search_btn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 218);
+            this.panel1.Size = new System.Drawing.Size(800, 229);
             this.panel1.TabIndex = 1;
+            // 
+            // refresh
+            // 
+            this.refresh.Location = new System.Drawing.Point(32, 163);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(75, 33);
+            this.refresh.TabIndex = 2;
+            this.refresh.Text = "Refresh";
+            this.refresh.UseVisualStyleBackColor = true;
+            this.refresh.Click += new System.EventHandler(this.refresh_Click);
             // 
             // add_btn
             // 
@@ -92,9 +104,9 @@ namespace QuanLyTruongHoc.Forms
             // 
             // search_btn
             // 
-            this.search_btn.Location = new System.Drawing.Point(701, 173);
+            this.search_btn.Location = new System.Drawing.Point(686, 163);
             this.search_btn.Name = "search_btn";
-            this.search_btn.Size = new System.Drawing.Size(75, 27);
+            this.search_btn.Size = new System.Drawing.Size(90, 46);
             this.search_btn.TabIndex = 0;
             this.search_btn.Text = "Tìm kiếm";
             this.search_btn.UseVisualStyleBackColor = true;
@@ -104,16 +116,16 @@ namespace QuanLyTruongHoc.Forms
             // 
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.Location = new System.Drawing.Point(0, 246);
+            this.dataGridView.ColumnHeadersHeight = 29;
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView.Location = new System.Drawing.Point(0, 85);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(800, 204);
+            this.dataGridView.Size = new System.Drawing.Size(800, 365);
             this.dataGridView.TabIndex = 2;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             this.dataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_CellMouseDown);
@@ -154,8 +166,8 @@ namespace QuanLyTruongHoc.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "BaseListForm";
@@ -175,13 +187,14 @@ namespace QuanLyTruongHoc.Forms
         protected System.Windows.Forms.ToolStripMenuItem hệThốngToolStripMenuItem;
         protected System.Windows.Forms.ToolStripMenuItem côngCụToolStripMenuItem;
         protected System.Windows.Forms.MenuStrip menuStrip1;
-        protected System.Windows.Forms.Panel panel1;
-        protected System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        protected System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem xemToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sửaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
         protected System.Windows.Forms.Button search_btn;
         protected System.Windows.Forms.Button add_btn;
+        protected System.Windows.Forms.Button refresh;
+        protected System.Windows.Forms.DataGridView dataGridView;
+        public System.Windows.Forms.Panel panel1;
     }
 }

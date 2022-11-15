@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyTruongHoc.DataObjects
 {
-    internal class Diem : IObject 
+    public class Diem : IObject 
     {
         [Helpers.Attributes.DataName("ma_lop_hoc")]
         [DisplayName("Mã lớp học")]

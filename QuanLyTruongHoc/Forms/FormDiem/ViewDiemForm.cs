@@ -26,9 +26,10 @@ namespace QuanLyTruongHoc.Forms.FormDiem
             Init();
 
         }
+
         protected override void Init()
         {
-            this.maLopTextBox.Enabled = true;
+            this.maLopTextBox.Enabled = false;
             this.maSVTextBox.Enabled = true;
             this.diem_giua_kyTextBox.Enabled = true;
             this.diem_cuoi_kyTextBox.Enabled = true;

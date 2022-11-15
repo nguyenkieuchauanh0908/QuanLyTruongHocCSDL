@@ -237,5 +237,11 @@ namespace QuanLyTruongHoc.Forms.FormMonHoc
         {
             return monHocBindingSource.Current as MonHoc;
         }
+
+        protected override void search_btn_Click(object sender, EventArgs e)
+        {
+            base.search_btn_Click(sender, e);
+            this.monHocBindingSource.DataSource = new MonHoc();
+        }
     }
 }

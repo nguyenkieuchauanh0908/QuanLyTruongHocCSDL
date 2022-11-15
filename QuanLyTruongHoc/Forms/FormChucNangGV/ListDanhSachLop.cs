@@ -15,16 +15,15 @@ namespace QuanLyTruongHoc.Forms.FormChucNangGV
         private BindingSource thongTinLopHocBindingSource;
         private System.ComponentModel.IContainer components;
         private int id;
-        //DataTable table = null;
 
-        public ListDanhSachLop(Login login) 
+        public ListDanhSachLop() : base()
         {
             InitializeComponent();
-            dataGridView.DataSource = MainForm.Manager.GiangVien.GetDanhSachLop(login);
+            InitList();
         }
         public override DataTable GetTable()
         {
-            return null;
+            return MainForm.Manager.GiangVien.GetDanhSachLop(MainForm.Manager.CurrentLogin);
         }
 
         public ListDanhSachLop(int id)
@@ -71,8 +70,8 @@ namespace QuanLyTruongHoc.Forms.FormChucNangGV
             DataRow row = ((DataRowView)dataGridView.SelectedRows[0].DataBoundItem).Row;
             if (row != null)
             {
-
                 ThongTinLopHoc thongTinLopHoc = Helpers.Convert.ConverterHelper.ConvertDataRow<ThongTinLopHoc>(row);
+                MessageBox.Show(thongTinLopHoc.maLop.ToString());
                 ListDanhSachSv listDanhSachSv = new ListDanhSachSv(thongTinLopHoc);
                 listDanhSachSv.Show();
             }
