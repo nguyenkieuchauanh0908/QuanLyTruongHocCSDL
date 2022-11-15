@@ -15,11 +15,16 @@ namespace QuanLyTruongHoc.Forms.FormChucNangGV
         private BindingSource thongTinLopHocBindingSource;
         private System.ComponentModel.IContainer components;
         private int id;
+        //DataTable table = null;
 
         public ListDanhSachLop(Login login) 
         {
             InitializeComponent();
             dataGridView.DataSource = MainForm.Manager.GiangVien.GetDanhSachLop(login);
+        }
+        public override DataTable GetTable()
+        {
+            return null;
         }
 
         public ListDanhSachLop(int id)

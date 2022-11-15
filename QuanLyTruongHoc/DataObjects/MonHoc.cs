@@ -12,22 +12,20 @@ namespace QuanLyTruongHoc.DataObjects
     internal class MonHoc : IObject
     {
         [DataName("ma_mon_hoc")]
-        [Required]
         [DisplayName("Mã môn học")]
         public int? MaMonHoc { get; set; }
 
         [DataName("ten_mon_hoc")]
-        [Required]
         [DisplayName("Tên môn học")]
         public string TenMonHoc { get; set; }
 
         [DataName("so_tin_chi")]
-        [Required]
+        
         [DisplayName("Số tín chỉ")]
         public Byte? SoTinhChi { get; set; }
 
         [DataName("da_xoa")]
-        [Required]
+       
         [DisplayName("Đã xóa")]
         public bool TinhTrang { get; set; }
     }

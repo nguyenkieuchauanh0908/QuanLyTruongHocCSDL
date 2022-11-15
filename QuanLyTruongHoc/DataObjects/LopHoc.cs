@@ -12,7 +12,6 @@ namespace QuanLyTruongHoc.DataObjects
     internal class LopHoc : IObject
     {
         [DataName("ma_lop_hoc")]
-        [Required]
         [DisplayName("Mã lớp học")]
         public int? MaLop { get; set; }
 

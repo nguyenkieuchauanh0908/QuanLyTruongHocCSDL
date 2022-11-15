@@ -66,14 +66,14 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
 
         public bool Update<T>(T obj) where T : IObject
         {
-            string query = "execute dbo.updateLopHoc @ma_ky_hoc, @ma_mon_hoc, @ma_giang_vien,@ma_lop_hoc, @da_xoa";
+            string query = "dbo.updateLopHoc";
             SqlParameter[] parameters = new SqlParameter[5];
             parameters[0] = new SqlParameter("@ma_ky_hoc", (obj as LopHoc).MaKyHoc);
             parameters[1] = new SqlParameter("@ma_mon_hoc", (obj as LopHoc).MaMonHoc);
             parameters[2] = new SqlParameter("@ma_giang_vien", (obj as LopHoc).MaGiangVien);
             parameters[3] = new SqlParameter("@ma_lop_hoc", (obj as LopHoc).MaLop);
             parameters[4] = new SqlParameter("@da_xoa", (obj as LopHoc).DaXoa);
-            return adoOperator.ExecuteNonQuery(query, parameters);
+            return adoOperator.ExecuteProcedure(query, parameters);
         }
 
         public DataTable LoadLopHocWithMonId(int id)

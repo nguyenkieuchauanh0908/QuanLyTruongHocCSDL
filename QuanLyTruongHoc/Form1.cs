@@ -25,6 +25,7 @@ using System.Windows.Forms;
 using QuanLyTruongHoc.Forms.FormChucNangGV;
 using QuanLyTruongHoc.Forms.FormTrangChu.FormTrangChuSV;
 using QuanLyTruongHoc.Forms.FormTrangChu.FormTrangChuAdmin;
+using QuanLyTruongHoc.Forms.FormTrangChu.FormTrangChuGV;
 
 namespace QuanLyTruongHoc
 {
@@ -77,6 +78,8 @@ namespace QuanLyTruongHoc
                         formHomeSV.Show();
                         break;
                     case VAITRO.GIANGVIEN:
+                        //FormHomeGV formHomeGV = new FormHomeGV();
+                        //formHomeGV.Show();
                         ListDanhSachLop listDanhSachLop = new ListDanhSachLop(login);
                         listDanhSachLop.Show();
                         break;
@@ -117,8 +120,11 @@ namespace QuanLyTruongHoc
             //ListKhoaForm listKhoaForm = new ListKhoaForm();
             //listKhoaForm.Show();
 
-            ListKyHocForm listKyHocForm = new ListKyHocForm();
-            listKyHocForm.Show();
+            //ListKyHocForm listKyHocForm = new ListKyHocForm();
+            //listKyHocForm.Show();
+
+            FormChamDiem formChamDiem = new FormChamDiem();
+            formChamDiem.Show();
         }
     }
 }

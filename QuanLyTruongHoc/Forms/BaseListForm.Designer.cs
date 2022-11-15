@@ -82,7 +82,7 @@ namespace QuanLyTruongHoc.Forms
             // 
             // add_btn
             // 
-            this.add_btn.Location = new System.Drawing.Point(612, 211);
+            this.add_btn.Location = new System.Drawing.Point(605, 170);
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(75, 33);
             this.add_btn.TabIndex = 1;

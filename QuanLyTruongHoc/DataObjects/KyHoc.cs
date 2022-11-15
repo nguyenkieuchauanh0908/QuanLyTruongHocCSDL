@@ -13,7 +13,6 @@ namespace QuanLyTruongHoc.DataObjects
     {
         [DataName("id_ky_hoc")]
         [DisplayName("Mã Kỳ Học")]
-        [Required]
         public byte? MaKyHoc { get; set; }
 
         [DataName("nam_hoc")]

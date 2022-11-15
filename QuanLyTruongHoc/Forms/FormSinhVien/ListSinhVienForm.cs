@@ -141,6 +141,7 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             // search_btn
             // 
             this.search_btn.Location = new System.Drawing.Point(237, 288);
+            this.search_btn.Click += new System.EventHandler(this.search_btn_Click_1);
             // 
             // add_btn
             // 
@@ -308,11 +309,6 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
             this.tinhTrangTextBox.Size = new System.Drawing.Size(200, 22);
             this.tinhTrangTextBox.TabIndex = 19;
             // 
-            // sinhVienDataGridView
-            // 
-            
-           
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "MaSV";
@@ -460,7 +456,8 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
         }
         protected override void add_btn_Click(object sender, EventArgs e)
         {
-            base.add_btn_Click(sender, e);
+            AddSinhVienForm addSinhVienForm = new AddSinhVienForm();
+            addSinhVienForm.Show();
         }
         //private void search_btn_Click_1(object sender, EventArgs e)
         //{
@@ -482,6 +479,11 @@ namespace QuanLyTruongHoc.Forms.FormSinhVien
         protected override SinhVien SearchObject()
         {
             return sinhVienBindingSource.Current as SinhVien;
+        }
+
+        private void search_btn_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

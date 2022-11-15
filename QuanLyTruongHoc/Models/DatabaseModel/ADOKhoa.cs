@@ -56,10 +56,9 @@ namespace QuanLyTruongHoc.Models.DatabaseModel
         public bool Update<T>(T obj) where T : IObject
         {
             string query = "dbo.Update_KHOA";
-            SqlParameter[] parameters = new SqlParameter[3];
+            SqlParameter[] parameters = new SqlParameter[2];
             parameters[0] = new SqlParameter("@ma_khoa", (obj as Khoa).MaKhoa);
             parameters[1] = new SqlParameter("@ten_khoa", (obj as Khoa).TenKhoa);
-            parameters[2] = new SqlParameter("@da_xoa", (obj as Khoa).DaXoa);
             return adoOperator.ExecuteProcedure(query, parameters);
         }
     }

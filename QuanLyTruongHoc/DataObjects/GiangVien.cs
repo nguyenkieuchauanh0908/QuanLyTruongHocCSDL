@@ -9,7 +9,6 @@ namespace QuanLyTruongHoc.DataObjects
     {
         [DataName("id")]
         [DisplayName("Mã giảng viên")]
-        [Required]
         public int? MaGV { get; set; }
 
         [DataName("ten")]

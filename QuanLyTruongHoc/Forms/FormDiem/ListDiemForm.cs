@@ -26,6 +26,7 @@ namespace QuanLyTruongHoc.Forms.FormDiem
         public ListDiemForm():base()
         {
             InitializeComponent();
+            dataGridView.DataSource = GetTable();
             diemBindingSource1.DataSource = new Diem();
 
         }
@@ -202,7 +203,7 @@ namespace QuanLyTruongHoc.Forms.FormDiem
                 MessageBox.Show("Không có giảng viên nào được chọn");
             }
         }
-        protected override void xóaToolStripMenuItem_Click(object sender, EventArgs e)
+        /*protected override void xóaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DataRow row = ((DataRowView)dataGridView.SelectedRows[0].DataBoundItem).Row;
             if (row != null)
@@ -227,7 +228,7 @@ namespace QuanLyTruongHoc.Forms.FormDiem
             {
                 MessageBox.Show("Không có điểm nào được chọn");
             }
-        }
+        }*/
         private void add_btn_Click(object sender, EventArgs e)
         {
             AddDiemForm addDiemForm = new AddDiemForm();
@@ -235,6 +236,7 @@ namespace QuanLyTruongHoc.Forms.FormDiem
         }
         private void search_btn_Click_1(object sender, EventArgs e)
         {
+
         }
         protected override Diem SearchObject()
         {

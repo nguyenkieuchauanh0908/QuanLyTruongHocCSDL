@@ -24,14 +24,13 @@ namespace QuanLyTruongHoc.Forms.FormKyHoc
         }
         public UpdateKyHocForm(KyHoc kyHoc) : base()
         {
-            KyHoc newkyHoc = ConverterHelper.ConvertDataRow<KyHoc>(MainForm.Manager.KyHoc.Get(kyHoc).Rows[0]);
             InitializeComponent();
-            this.LoadDataFromObject(newkyHoc);
+            this.LoadDataFromObject(kyHoc);
             Init();
         }
         protected override void Init()
         {
-            this.maKyHocTextBox.Enabled = false;
+            this.maKyHocTextBox.Enabled = true;
         }
         private void InitializeComponent()
         {

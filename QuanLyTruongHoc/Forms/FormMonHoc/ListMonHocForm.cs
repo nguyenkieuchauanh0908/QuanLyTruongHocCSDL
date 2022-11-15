@@ -25,6 +25,7 @@ namespace QuanLyTruongHoc.Forms.FormMonHoc
         public ListMonHocForm()
         {
             InitializeComponent();
+            
             monHocBindingSource.DataSource = new MonHoc();
         }
         public override DataTable GetTable()

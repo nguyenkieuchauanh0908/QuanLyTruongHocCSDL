@@ -23,6 +23,7 @@ namespace QuanLyTruongHoc.Forms.FormKhoa
         public ListKhoaForm()
         {
             InitializeComponent();
+            dataGridView.DataSource = GetTable();
             khoaBindingSource.DataSource = new Khoa();
         }
         public override DataTable GetTable()
