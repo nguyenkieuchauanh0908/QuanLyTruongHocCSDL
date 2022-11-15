@@ -20,11 +20,12 @@ namespace QuanLyTruongHoc.Forms.FormKhoa
         private TextBox tenKhoaTextBox;
         private System.ComponentModel.IContainer components;
 
-        public ListKhoaForm()
+        public ListKhoaForm():base()
         {
             InitializeComponent();
             dataGridView.DataSource = GetTable();
             khoaBindingSource.DataSource = new Khoa();
+            InitList();
         }
         public override DataTable GetTable()
         {

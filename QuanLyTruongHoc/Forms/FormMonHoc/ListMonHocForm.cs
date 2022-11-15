@@ -22,11 +22,12 @@ namespace QuanLyTruongHoc.Forms.FormMonHoc
         private CheckBox tinhTrangCheckBox;
         private System.ComponentModel.IContainer components;
 
-        public ListMonHocForm()
+        public ListMonHocForm():base()
         {
             InitializeComponent();
             
             monHocBindingSource.DataSource = new MonHoc();
+            InitList();
         }
         public override DataTable GetTable()
         {

@@ -31,6 +31,7 @@ namespace QuanLyTruongHoc.Forms.FormGiangVien
         {
             InitializeComponent();
             giangVienBindingSource1.DataSource = new GiangVien();
+            InitList();
         }
 
         public override DataTable GetTable()

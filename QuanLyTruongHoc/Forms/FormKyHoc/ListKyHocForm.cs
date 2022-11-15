@@ -23,10 +23,11 @@ namespace QuanLyTruongHoc.Forms.FormKyHoc
         private TextBox namHocTextBox;
         private System.ComponentModel.IContainer components;
 
-        public ListKyHocForm()
+        public ListKyHocForm():base()
         {
             InitializeComponent();
             kyHocBindingSource.DataSource = new KyHoc();
+            InitList();
         }
         public override DataTable GetTable()
         {

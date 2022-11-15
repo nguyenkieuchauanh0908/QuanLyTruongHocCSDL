@@ -27,6 +27,7 @@ namespace QuanLyTruongHoc.Forms.FormLopHoc
         {
             InitializeComponent();
             lopHocBindingSource.DataSource = new LopHoc();
+            InitList();
             //dataGridView.DataSource = MainForm.Manager.LopHoc.Load();
         }
         public override DataTable GetTable()
